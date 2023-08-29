@@ -12,3 +12,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// to link to registration page
+// <a routerLink="/registration">Register</a>
