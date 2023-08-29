@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng run config && ng serve",
+    "config":"ts-node ./src/environments/writeEnv.ts",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
