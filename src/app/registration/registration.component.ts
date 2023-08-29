@@ -12,6 +12,7 @@ export class RegistrationComponent {
   name = '';
   surname = '';
   role = '';
+  team = '';
 
   constructor(private registrationService: RegistrationService) { }
 
@@ -22,7 +23,8 @@ export class RegistrationComponent {
         this.password,
         this.name,
         this.surname,
-        this.role
+        this.role,
+        this.team
       );
       // handle successful registration
     } catch (error) {
