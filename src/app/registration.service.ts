@@ -30,7 +30,7 @@ export class RegistrationService {
           .set({
             name,
             surname,
-            role,
+            role
           });
         // handle successful registration
       } else {

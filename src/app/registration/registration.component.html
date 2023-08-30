@@ -1,33 +1,17 @@
-<p>registration works!</p>
-<!-- <form (ngSubmit)="onSubmit()">
+<!-- registration.component.html -->
+<form (ngSubmit)="onSubmit()">
+  <h1>Create Account</h1>
+  <input type="text" placeholder="Name" [(ngModel)]="name" name="name" />
+  <input type="email" placeholder="Email" [(ngModel)]="email" name="email" />
+  <input
+    type="password"
+    placeholder="Password"
+    [(ngModel)]="password"
+    name="password"
+  />
   <label>
-    Email:
-    <input type="email" [(ngModel)]="email" name="email" />
+    <input type="checkbox" [(ngModel)]="isCoach" name="isCoach" />
+    I am a coach
   </label>
-  <br />
-  <label>
-    Password:
-    <input type="password" [(ngModel)]="password" name="password" />
-  </label>
-  <br />
-  <label>
-    Name:
-    <input type="text" [(ngModel)]="name" name="name" />
-  </label>
-  <br />
-  <label>
-    Surname:
-    <input type="text" [(ngModel)]="surname" name="surname" />
-  </label>
-  <br />
-  <label>
-    Role:
-    <select [(ngModel)]="role" name="role">
-      <option value="">Select a role</option>
-      <option value="player">Player</option>
-      <option value="coach">Coach</option>
-    </select>
-  </label>
-  <br />
-  <button type="submit">Register</button>
-</form> -->
+  <button>Sign Up</button>
+</form>
