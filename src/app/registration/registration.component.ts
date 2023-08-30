@@ -1,4 +1,6 @@
+// registration.component.ts
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RegistrationService } from '../registration.service';
 
 @Component({
@@ -11,20 +13,19 @@ export class RegistrationComponent {
   password = '';
   name = '';
   surname = '';
-  role = '';
-  team = '';
+  isCoach = false;
 
   constructor(private registrationService: RegistrationService) { }
 
   async onSubmit() {
+    const role = this.isCoach ? 'coach' : 'player';
     try {
       await this.registrationService.register(
         this.email,
         this.password,
         this.name,
         this.surname,
-        this.role,
-        this.team
+        role
       );
       // handle successful registration
     } catch (error) {
