@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegisterComponent } from './component/register/register.component';
+import { LoginComponent } from './component/login/login.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+
+
 
 const routes: Routes = [
-  // other routes
-  { path: 'registration', component: RegistrationComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'Registration', component: RegisterComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'Dashboard', component: DashboardComponent },
 ];
 
 @NgModule({
@@ -13,5 +19,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-// to link to registration page
+// to link to registration pages
 // <a routerLink="/registration">Register</a>
