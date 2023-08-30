@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
 
   ],
   providers: [{ provide: 'environment', useValue: environment }],

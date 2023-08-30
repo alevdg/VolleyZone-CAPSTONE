@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "VolleyZone",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "volleyzone-capstone": {
+      "hosting": {
+        "VolleyZone": [
+          "volleyzone-capstone"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "volleyzone-capstone"
+  }
+}
