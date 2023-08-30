@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import { RegistrationComponent } from './registration/registration.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
-  providers: [],
+  providers: [{ provide: 'environment', useValue: environment }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
