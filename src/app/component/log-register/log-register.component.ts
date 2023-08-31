@@ -1,5 +1,6 @@
+// log-register.component.ts
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from '../../shared/auth.service';
 
 @Component({
   selector: 'app-log-register',
@@ -7,11 +8,13 @@ import { AuthService } from './auth.service';
   styleUrls: ['./log-register.component.scss']
 })
 export class LogRegisterComponent {
-  private email: string;
-  private password: string;
-  private name: string;
-  private surname: string;
-  private role: string;
+  email: string = '';
+  password: string = '';
+  name: string = '';
+  surname: string = '';
+  role: string = '';
+  showLoginOverlay: boolean = false;
+  showRegisterOverlay: boolean = false;
 
   constructor(private authService: AuthService) { }
 
