@@ -1,0 +1,68 @@
+<p-tabView>
+  <p-tabPanel header="Login">
+    <h1>Log In</h1>
+    <div class="social-media">
+      <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <span>or sign up using your email account</span>
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="email"
+      placeholder="Email"
+      required
+    />
+    <input
+      type="password"
+      pInputText
+      [(ngModel)]="password"
+      placeholder="Password"
+      required
+    />
+    <a href="#">Forgot your password?</a>
+    <p-button label="Sign In"></p-button>
+  </p-tabPanel>
+  <p-tabPanel header="Register">
+    <h1>Create Account</h1>
+    <div class="social-media"></div>
+    <span>or sign up using your email account</span>
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="name"
+      placeholder="Name"
+      required
+    />
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="email"
+      placeholder="Email"
+      required
+    />
+    <input
+      type="password"
+      pInputText
+      [(ngModel)]="password"
+      placeholder="Password"
+      required
+    />
+    <p-button label="Sign Up"></p-button>
+  </p-tabPanel>
+</p-tabView>
+
+<p-dialog header="Welcome Back!" [(visible)]="showLoginOverlay">
+  <p>To keep connected with us please login with your personal info</p>
+  <p-footer>
+    <button (click)="showLoginOverlay = false">Log In</button>
+  </p-footer>
+</p-dialog>
+
+<p-dialog header="Howdy, Stranger!" [(visible)]="showRegisterOverlay">
+  <p>Sign up for an account and start your journey now!!</p>
+  <p-footer>
+    <button (click)="showRegisterOverlay = false">Sign Up</button>
+  </p-footer>
+</p-dialog>

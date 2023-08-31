@@ -5,24 +5,31 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
-import { LoginComponent } from './component/login/login.component';
-import { RegisterComponent } from './component/register/register.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { TabViewModule } from 'primeng/tabview';
+import { DialogModule } from 'primeng/dialog';
+import { LogRegisterComponent } from './component/log-register/log-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
+    LogRegisterComponent,
     DashboardComponent,
-    LandingPageComponent
+    LandingPageComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    InputTextModule,
+    ButtonModule,
+    TabViewModule,
+    DialogModule,
 
   ],
   providers: [{ provide: 'environment', useValue: environment }],
