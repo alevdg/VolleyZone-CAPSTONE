@@ -24,7 +24,7 @@ export class AuthService {
   register(email: string, password: string, name: string, surname: string, role: string) {
     this.fireauth.createUserWithEmailAndPassword(email, password).then((userCredential) => {
       if (userCredential.user) {
-        // Store additional user data in the database
+        // Store user data in the database
         this.db.database.ref('users/' + userCredential.user.uid).set({
           email: email,
           id_user: userCredential.user.uid,
