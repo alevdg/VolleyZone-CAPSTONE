@@ -1,4 +1,3 @@
-// log-register.component.ts
 import { Component } from '@angular/core';
 import { AuthService } from '../../shared/auth.service';
 
@@ -18,11 +17,31 @@ export class LogRegisterComponent {
 
   constructor(private authService: AuthService) { }
 
+  ngOnInit() {
+    const signUpButton = document.getElementById('signUp') as HTMLElement;
+    const signInButton = document.getElementById('signIn') as HTMLElement;
+    const container = document.getElementById('container') as HTMLElement;
+
+    signUpButton.addEventListener('click', () =>
+      container.classList.add('right-panel-active')
+    );
+
+    signInButton.addEventListener('click', () =>
+      container.classList.remove('right-panel-active')
+    );
+  }
+
   login() {
     this.authService.login(this.email, this.password);
   }
 
   register() {
-    this.authService.register(this.email, this.password, this.name, this.surname, this.role);
+    this.authService.register(
+      this.email,
+      this.password,
+      this.name,
+      this.surname,
+      this.role
+    );
   }
 }
