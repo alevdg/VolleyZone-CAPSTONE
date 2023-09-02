@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     firebase: {
         apiKey: "AIzaSyAvvE4czx3bB3X3I4MZ7DlBPqPWA8Dwv2Y",
         authDomain: "volleyzone-capstone.firebaseapp.com",
