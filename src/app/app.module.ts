@@ -12,6 +12,18 @@ import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { LogRegisterComponent } from './component/log-register/log-register.component';
+import { MenubarModule } from 'primeng/menubar';
+import { MenuItem } from 'primeng/api';
+import { CardModule } from 'primeng/card';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'primeng/carousel';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -30,7 +42,16 @@ import { LogRegisterComponent } from './component/log-register/log-register.comp
     ButtonModule,
     TabViewModule,
     DialogModule,
+    MenubarModule,
+    CardModule,
+    HttpClientModule,
+    AngularFireAuthModule,
+    CarouselModule,
+    BrowserAnimationsModule,
 
+
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
   ],
   providers: [{ provide: 'environment', useValue: environment }],
   bootstrap: [AppComponent]
