@@ -26,6 +26,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import firebase from 'firebase/compat/app';
 import { AuthService } from './shared/auth.service';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './component/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { AuthService } from './shared/auth.service';
     LogRegisterComponent,
     DashboardComponent,
     LandingPageComponent,
+    SignInComponent,
+    SignUpComponent,
 
   ],
   imports: [
