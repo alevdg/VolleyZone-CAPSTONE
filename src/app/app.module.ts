@@ -11,7 +11,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
-import { LogRegisterComponent } from './component/log-register/log-register.component';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
 import { CardModule } from 'primeng/card';
@@ -26,13 +25,13 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import firebase from 'firebase/compat/app';
 import { AuthService } from './shared/auth.service';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { SignInComponent } from './component/sign-in/sign-in.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogRegisterComponent,
     DashboardComponent,
     LandingPageComponent,
     SignInComponent,
@@ -44,6 +43,8 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     InputTextModule,
     ButtonModule,
     TabViewModule,
@@ -51,7 +52,6 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
     MenubarModule,
     CardModule,
     HttpClientModule,
-    AngularFireAuthModule,
     CarouselModule,
     BrowserAnimationsModule,
 
