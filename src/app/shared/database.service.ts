@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { collectionData, collection, Firestore, doc, setDoc, docData, updateDoc, deleteDoc, DocumentReference } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { iTeam } from './teams';
 
 @Injectable({
@@ -41,5 +42,9 @@ export class DatabaseService {
 
   getRoleDocument(uid: string) {
     return doc(this.firestore, `roles/${uid}`);
+  }
+
+  getTeamMembersCollection() {
+    return collection(this.firestore, 'teamMembers');
   }
 }

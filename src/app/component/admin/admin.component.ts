@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../shared/team.service';
+import { DatabaseService } from '../../shared/database.service';
+import { getDocs, doc, deleteDoc } from 'firebase/firestore';
+
 import { iTeam } from '../../shared/teams';
 
 
@@ -10,11 +13,13 @@ import { iTeam } from '../../shared/teams';
 })
 export class AdminComponent implements OnInit {
   teamsWithPendingRequests: iTeam[];
+  teamMembers: any[] = [];
 
-  constructor(private teamService: TeamService) { }
+  constructor(private teamService: TeamService, private databaseService: DatabaseService) { }
 
   ngOnInit() {
     this.getTeamsWithPendingRequests();
+    this.getTeamMembers();
   }
 
   getTeamsWithPendingRequests() {
@@ -31,6 +36,7 @@ export class AdminComponent implements OnInit {
       })
       .catch(error => {
         console.log('Error accepting join request:', error);
+        alert('Error accepting join request: ' + error);
       });
   }
 
@@ -42,6 +48,23 @@ export class AdminComponent implements OnInit {
       })
       .catch(error => {
         console.log('Error rejecting join request:', error);
+        alert('Error rejecting join request: ' + error);
+      });
+  }
+
+  getTeamMembers(): void {
+    getDocs(this.databaseService.getTeamMembersCollection())
+      .then((querySnapshot) => {
+        this.teamMembers = querySnapshot.docs.map(doc => doc.data());
+      });
+  }
+
+  removeMember(memberId: string): void {
+    deleteDoc(doc(this.databaseService.getTeamMembersCollection(), memberId))
+      .catch(error => {
+        console.error('Error removing member: ', error);
+        alert('Error removing member: ' + error);
       });
   }
 }
+
