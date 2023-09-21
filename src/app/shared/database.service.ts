@@ -23,6 +23,7 @@ export class DatabaseService {
     return collectionData(this.teamsCollection, { idField: 'id' }) as Observable<iTeam[]>;
   }
 
+
   getTeamById(id: string): Observable<iTeam> {
     return docData(doc(this.firestore, 'teams', id)) as Observable<iTeam>;
   }

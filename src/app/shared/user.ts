@@ -3,5 +3,5 @@ export interface iUser {
   email: string;
   displayName: string;
   photoURL: string;
-  emailVerified: boolean;
+  emailVerified?: boolean;
 }
