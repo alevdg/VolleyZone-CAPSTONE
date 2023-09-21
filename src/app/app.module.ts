@@ -31,7 +31,11 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CreateTeamComponent } from './component/create-team/create-team.component';
 import { TeamListComponent } from './component/team-list/team-list.component';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
-import { SideBarComponent } from './pages/side-bar/side-bar.component';
+import { SidebarComponent } from './pages/side-bar/side-bar.component';
+import { TeamDetailComponent } from './component/team-detail/team-detail.component';
+import { AdminComponent } from './component/admin/admin.component';
+import { DatabaseService } from './shared/database.service';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { SideBarComponent } from './pages/side-bar/side-bar.component';
     CreateTeamComponent,
     TeamListComponent,
     TeamPageComponent,
-    SideBarComponent,
+    TeamDetailComponent,
+    AdminComponent,
+    SidebarComponent,
 
   ],
   imports: [

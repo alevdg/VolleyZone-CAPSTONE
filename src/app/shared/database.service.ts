@@ -23,7 +23,6 @@ export class DatabaseService {
     return collectionData(this.teamsCollection, { idField: 'id' }) as Observable<iTeam[]>;
   }
 
-
   getTeamById(id: string): Observable<iTeam> {
     return docData(doc(this.firestore, 'teams', id)) as Observable<iTeam>;
   }
@@ -34,5 +33,13 @@ export class DatabaseService {
 
   deleteTeam(id: string): Promise<void> {
     return deleteDoc(doc(this.firestore, 'teams', id));
+  }
+
+  getRolesCollection() {
+    return collection(this.firestore, 'roles');
+  }
+
+  getRoleDocument(uid: string) {
+    return doc(this.firestore, `roles/${uid}`);
   }
 }

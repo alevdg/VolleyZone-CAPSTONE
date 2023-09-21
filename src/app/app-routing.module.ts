@@ -4,6 +4,9 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { AdminComponent } from './component/admin/admin.component';
+import { TeamPageComponent } from './pages/team-page/team-page.component';
+
 
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
@@ -12,6 +15,9 @@ const routes: Routes = [
   { path: 'Login', component: SignInComponent },
   { path: 'Register', component: SignUpComponent },
   { path: 'Dashboard', component: DashboardComponent },
+  { path: 'Team', component: TeamPageComponent },
+  { path: 'Manage', component: AdminComponent },
+
 ];
 
 @NgModule({

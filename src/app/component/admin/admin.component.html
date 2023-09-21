@@ -1,0 +1,17 @@
+<p>admin works!</p>
+<h2>Manage Join Requests</h2>
+
+<div *ngFor="let team of teamsWithPendingRequests">
+  <h3>{{ team.name }}</h3>
+  <ul>
+    <li *ngFor="let request of team.joinRequests">
+      User: {{ request.userId }} - Status: {{ request.status }}
+      <button (click)="acceptJoinRequest(team.id, request.userId)">
+        Accept
+      </button>
+      <button (click)="rejectJoinRequest(team.id, request.userId)">
+        Reject
+      </button>
+    </li>
+  </ul>
+</div>

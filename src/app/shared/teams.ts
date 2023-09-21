@@ -4,4 +4,10 @@ export interface iTeam {
   admin?: string;
   members?: string[];
   description: string;
+  joinRequests?: JoinRequest[];
+}
+
+export interface JoinRequest {
+  userId: string;
+  status: string;
 }
