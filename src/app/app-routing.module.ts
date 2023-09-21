@@ -5,8 +5,8 @@ import { LandingPageComponent } from './component/landing-page/landing-page.comp
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 
-
-
+// route guard
+import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
   { path: 'Login', component: SignInComponent },

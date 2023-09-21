@@ -28,6 +28,10 @@ import { AuthService } from './shared/auth.service';
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { CreateTeamComponent } from './component/create-team/create-team.component';
+import { TeamListComponent } from './component/team-list/team-list.component';
+import { TeamPageComponent } from './pages/team-page/team-page.component';
+import { SideBarComponent } from './pages/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     LandingPageComponent,
     SignInComponent,
     SignUpComponent,
+    CreateTeamComponent,
+    TeamListComponent,
+    TeamPageComponent,
+    SideBarComponent,
 
   ],
   imports: [
