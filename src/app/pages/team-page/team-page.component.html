@@ -10,7 +10,8 @@
     <div class="col" *ngFor="let teamMember of teamMembers">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">{{ teamMember.displayName }}</h5>
+          <h5 class="card-title">{{ teamMember.name }}</h5>
+          <p class="card-text">{{ teamMember.description }}</p>
         </div>
       </div>
     </div>

@@ -24,8 +24,8 @@ export class TeamPageComponent implements OnInit {
       switchMap((team: iTeam | undefined) => {
         if (team) {
           // Fetch each team member's data from the 'users' collection
-          const memberObservables = team.members.map(memberId =>
-            this.firestore.doc<iUser>(`users/${memberId}`).valueChanges()
+          const memberObservables = team.members.map(uid =>
+            this.firestore.doc<iUser>(`users/${uid}`).valueChanges()
           );
 
           // Combine the Observables into one Observable that emits an array of user data
