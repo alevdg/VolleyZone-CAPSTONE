@@ -23,16 +23,11 @@ h4.mt-1.mb-5.pb-1 {
 
 // Form body
 .card-body.p-md-5.mx-md-4 {
-  background-color: #333;
+  background-color: #E3E3E3;
   color: #E49622;
   height: 90vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-// Forgot password text
-.text-white-muted {
-  color: rgba(255, 255, 255, 0.6);
 }

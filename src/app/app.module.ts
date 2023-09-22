@@ -36,6 +36,7 @@ import { TeamDetailComponent } from './component/team-detail/team-detail.compone
 import { AdminComponent } from './component/admin/admin.component';
 import { DatabaseService } from './shared/database.service';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     CarouselModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
 
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
