@@ -8,7 +8,7 @@ height: 25px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #333;
+  background-color: #212529;
   color: #E49622;
   height: 50px;
   padding: 2.5em 1em;
@@ -52,7 +52,7 @@ height: 25px;
 .menu-button::before,
 .menu-button::after {
   display: block;
-  background-color: black;
+  background-color: #E49622;
   position: absolute;
   height: 4px;
   width: 30px;
@@ -111,15 +111,20 @@ height: 25px;
   width: 100%;
   line-height: 3rem;
   padding-left: 175px;
-  background-color: #333;
+  background-color: #E49622;
+  border-color: #212529;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-weight: 400;
   list-style-type:none;
+  text-align:center;
+  text-transform: uppercase;
+
 }
 
 .item a{
   text-decoration: none;
+  color:black
 }
 
 .item a:hover{

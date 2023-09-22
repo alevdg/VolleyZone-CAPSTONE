@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
   { path: 'Login', component: SignInComponent },
   { path: 'Register', component: SignUpComponent },
-  { path: 'Dashboard', component: DashboardComponent },
+  { path: 'Home', component: DashboardComponent },
   { path: 'Team', component: TeamPageComponent },
   { path: 'Manage', component: AdminComponent },
   { path: 'Footer', component: FooterComponent },

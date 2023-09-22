@@ -1,0 +1,68 @@
+#box-img {
+  position: relative;
+}
+
+
+#profile-img-post {
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.logo-box {
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.follow-btn {
+  width: 7em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: lightgray;
+    border: 2px solid black;
+  }
+}
+.clickable:hover {
+  cursor: pointer;
+}
+.recommendation {
+  width: 15em;
+}
+.recommendation:hover {
+  background-color: rgba(239, 239, 239, 0.65);
+  border-radius: 5px;
+}
+.profile-pic {
+  width: 50px;
+  height: 50px;
+}
+
+#add-post {
+  width: 350px;
+}
+
+.user-info {
+  font-size: 0.8em;
+}
+// button connect
+.btn.rounded-pill.border.border-2.border-secondary.px-3.text-secondary{
+  background-color: #E49622;
+  color: black;
+}
+
+p.text-secondary.px-2,p.text-secondary.ms-1,
+a.text-decoration-none {
+  color: #E49622!important;
+}
+
+p.mb-2 {
+  color: #E49622!important;
+}
+
+
+
+
+
