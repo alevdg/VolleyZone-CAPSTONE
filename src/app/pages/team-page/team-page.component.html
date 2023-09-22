@@ -9,14 +9,8 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let teamMember of teamMembers">
       <div class="card h-100">
-        <img
-          [src]="teamMember.image"
-          class="card-img-top"
-          [alt]="teamMember.name"
-        />
         <div class="card-body">
-          <h5 class="card-title">{{ teamMember.name }}</h5>
-          <p class="card-text">{{ teamMember.description }}</p>
+          <h5 class="card-title">{{ teamMember.displayName }}</h5>
         </div>
       </div>
     </div>
