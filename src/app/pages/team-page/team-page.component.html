@@ -1,53 +1,24 @@
-<section class="banner-section">
-  <div class="container">
-    <img src="path/to/your/banner-image.jpg" alt="Banner Image" />
-  </div>
-</section>
-
-<section class="team-page-section">
-  <div class="container">
-    <!-- Sec Title -->
-    <div class="sec-title centered">
-      <div class="title">Our Team</div>
-      <div class="separator"><span></span></div>
-      <h2>Lorem Ipsum dummy text</h2>
-      <button class="btn btn-primary">Join Team</button>
+<app-sidebar></app-sidebar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Team Name</h1>
+      <p class="text-center">Team Description</p>
     </div>
-    <!-- Team Block -->
-    <div class="container">
-      <!-- Loop through teamMembers and generate team cards -->
-      <div class="row">
-        <div
-          class="col-lg-4 col-md-6 col-sm-12"
-          *ngFor="let member of teamMembers"
-        >
-          <div class="card mb-4">
-            <img
-              src="{{ member.image }}"
-              class="card-img-top"
-              alt="Member Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ member.name }}</h5>
-              <p class="card-text">{{ member.designation }}</p>
-              <ul class="list-inline mb-3">
-                <li
-                  class="list-inline-item"
-                  *ngFor="let socialLink of member.socialLinks"
-                >
-                  <a
-                    href="{{ socialLink.url }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-{{ socialLink.name.toLowerCase() }}"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let teamMember of teamMembers">
+      <div class="card h-100">
+        <img
+          [src]="teamMember.image"
+          class="card-img-top"
+          [alt]="teamMember.name"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ teamMember.name }}</h5>
+          <p class="card-text">{{ teamMember.description }}</p>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>

@@ -3,9 +3,11 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { iUser } from '../shared/user';
+import { iTeam } from '../shared/teams';
 import auth from 'firebase/compat/app';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, take } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +38,24 @@ export class AuthService {
   // Sign in with email/password
   async SignIn(email: string, password: string) {
     const result = await this.afAuth.signInWithEmailAndPassword(email, password);
-    this.router.navigate(['dashboard']);
+
+    // Get the logged-in user's Firestore document
+    const userDoc = this.afs.doc<iUser>(`users/${result.user?.uid}`);
+    const user = await userDoc.valueChanges().pipe(take(1)).toPromise();
+
+    // Update the team ID in the user's document
+    const teamId = user?.teamId ?? '';
+
+    // Redirect to the team page if the team ID is available
+    if (teamId) {
+      this.router.navigate(['Team']); // Replace 'team' with your actual team page route
+    } else {
+      this.router.navigate(['Dashboard']);
+    }
+
     return this.updateUserData(result.user);
   }
+
 
   // Sign up with email/password
   async SignUp(email: string, password: string, name: string, surname: string) {
@@ -62,12 +79,14 @@ export class AuthService {
       email: user.email,
       displayName: name && surname ? `${name} ${surname}` : user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      teamId: ''
     };
     return userRef.set(userData, {
       merge: true
     });
   }
+
 
   // Auth logic to run auth providers
   async AuthLogin(provider: any) {

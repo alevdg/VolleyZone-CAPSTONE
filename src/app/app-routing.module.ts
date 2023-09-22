@@ -7,7 +7,6 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
 
-
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
 import { FooterComponent } from './pages/footer/footer.component';

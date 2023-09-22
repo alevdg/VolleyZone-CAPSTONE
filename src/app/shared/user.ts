@@ -4,4 +4,5 @@ export interface iUser {
   displayName: string;
   photoURL: string;
   emailVerified?: boolean;
+  teamId;
 }

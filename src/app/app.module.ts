@@ -39,6 +39,8 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { TeamService } from './shared/team.service';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 
 @NgModule({
@@ -82,7 +84,7 @@ import { FooterComponent } from './pages/footer/footer.component';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
   ],
-  providers: [AuthService],
+  providers: [AuthService, TeamService, DatabaseService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
