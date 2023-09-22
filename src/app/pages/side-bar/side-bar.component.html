@@ -1,1 +1,30 @@
-<p>side-bar works!</p>
+<nav class="top-nav">
+  <a class="navbar-brand" [routerLink]="'.'">
+    <div id="logo">
+      <img src="../../../assets/img/logo vz.png" alt="VZ Logo" />
+    </div>
+  </a>
+
+  <input id="menu-toggle" type="checkbox" />
+
+  <label class="menu-button-container" for="menu-toggle">
+    <div class="menu-button"></div>
+  </label>
+
+  <ul class="menu">
+    <li class="discover">
+      <input type="checkbox" id="drop-4" hidden />
+
+      <label class="dropHeader hover-underline-animation" for="drop-4">
+        VOLLEYZONE <span class="arrow">▾</span>
+      </label>
+
+      <ul class="list">
+        <li class="item"><a [routerLink]="'Home'">Home</a></li>
+        <li class="item"><a [routerLink]="'Team'">My Team</a></li>
+        <li class="item"><a [routerLink]="'Admin'">Manage</a></li>
+        <li class="item"><a [routerLink]="'Landing'">Log out</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
