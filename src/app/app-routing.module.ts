@@ -10,6 +10,7 @@ import { TeamPageComponent } from './pages/team-page/team-page.component';
 
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
+import { FooterComponent } from './pages/footer/footer.component';
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
   { path: 'Login', component: SignInComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent },
   { path: 'Team', component: TeamPageComponent },
   { path: 'Manage', component: AdminComponent },
-
+  { path: 'Footer', component: FooterComponent }
 ];
 
 @NgModule({

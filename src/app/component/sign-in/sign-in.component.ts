@@ -34,7 +34,7 @@ export class SignInComponent implements OnInit {
       .then(() => {
         console.log('User signed in successfully!');
         this.successMessage = 'User signed in successfully!';
-        this.router.navigate(['/home']); // navigate to home page
+        this.router.navigate(['/Dashboard']); // navigate to home page
       })
       .catch(error => {
         console.error(error);

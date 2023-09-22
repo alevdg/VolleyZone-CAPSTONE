@@ -27,24 +27,66 @@
                 </p>
 
                 <!-- Form -->
-                <form class="mx-1 mx-md-4">
+                <form [formGroup]="registerForm" class="mx-1 mx-md-4">
                   <!-- Row for name and surname -->
                   <div class="row">
                     <!-- Column for name -->
                     <div class="col">
                       <div class="form-outline mb-4">
-                        <input type="text" id="name" class="form-control" />
+                        <input
+                          type="text"
+                          id="name"
+                          class="form-control"
+                          formControlName="name"
+                        />
                         <label class="form-label" for="name">Your Name</label>
+                        <div
+                          *ngIf="
+                            registerForm.get('name').invalid &&
+                            (registerForm.get('name').dirty ||
+                              registerForm.get('name').touched)
+                          "
+                          class="text-danger"
+                        >
+                          <div
+                            *ngIf="
+                              registerForm.get('name').hasError('required')
+                            "
+                          >
+                            Your Name is required
+                          </div>
+                        </div>
                       </div>
                     </div>
 
                     <!-- Column for surname -->
                     <div class="col">
                       <div class="form-outline mb-4">
-                        <input type="text" id="surname" class="form-control" />
+                        <input
+                          type="text"
+                          id="surname"
+                          class="form-control"
+                          formControlName="surname"
+                        />
                         <label class="form-label" for="surname"
                           >Your Surname</label
                         >
+                        <div
+                          *ngIf="
+                            registerForm.get('surname').invalid &&
+                            (registerForm.get('surname').dirty ||
+                              registerForm.get('surname').touched)
+                          "
+                          class="text-danger"
+                        >
+                          <div
+                            *ngIf="
+                              registerForm.get('surname').hasError('required')
+                            "
+                          >
+                            Your Surname is required
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -53,8 +95,29 @@
                   <div class="row">
                     <div class="col">
                       <div class="form-outline mb-4">
-                        <input type="email" id="email" class="form-control" />
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control"
+                          formControlName="email"
+                        />
                         <label class="form-label" for="email">Your Email</label>
+                        <div
+                          *ngIf="
+                            registerForm.get('email').invalid &&
+                            (registerForm.get('email').dirty ||
+                              registerForm.get('email').touched)
+                          "
+                          class="text-danger"
+                        >
+                          <div
+                            *ngIf="
+                              registerForm.get('email').hasError('required')
+                            "
+                          >
+                            Your Email is required
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -68,10 +131,27 @@
                           type="password"
                           id="password"
                           class="form-control"
+                          formControlName="password"
                         />
                         <label class="form-label" for="password"
                           >Password</label
                         >
+                        <div
+                          *ngIf="
+                            registerForm.get('password').invalid &&
+                            (registerForm.get('password').dirty ||
+                              registerForm.get('password').touched)
+                          "
+                          class="text-danger"
+                        >
+                          <div
+                            *ngIf="
+                              registerForm.get('password').hasError('required')
+                            "
+                          >
+                            Password is required
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -86,6 +166,24 @@
                         <label class="form-label" for="repeatPassword"
                           >Repeat your password</label
                         >
+                        <div
+                          *ngIf="
+                            registerForm.get('repeatPassword').invalid &&
+                            (registerForm.get('repeatPassword').dirty ||
+                              registerForm.get('repeatPassword').touched)
+                          "
+                          class="text-danger"
+                        >
+                          <div
+                            *ngIf="
+                              registerForm
+                                .get('repeatPassword')
+                                .hasError('required')
+                            "
+                          >
+                            Repeat password is required
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -95,13 +193,29 @@
                     <input
                       class="form-check-input me-2"
                       type="checkbox"
-                      [formControl]="terms"
+                      formControlName="terms"
                       id="form2Example3c"
                     />
                     <label class="form-check-label" for="form2Example3c">
                       I agree all statements in
                       <a href="#!">Terms of service</a>
                     </label>
+                    <div
+                      *ngIf="
+                        registerForm.get('terms').invalid &&
+                        (registerForm.get('terms').dirty ||
+                          registerForm.get('terms').touched)
+                      "
+                      class="text-danger"
+                    >
+                      <div
+                        *ngIf="
+                          registerForm.get('terms').hasError('requiredTrue')
+                        "
+                      >
+                        You must agree to the Terms of Service
+                      </div>
+                    </div>
                   </div>
 
                   <!-- Button to submit the form -->
@@ -109,7 +223,7 @@
                     <button
                       class="btn btn-primary btn-lg"
                       (click)="signUp()"
-                      [disabled]="!terms.value"
+                      [disabled]="!registerForm.valid"
                     >
                       REGISTER
                     </button>

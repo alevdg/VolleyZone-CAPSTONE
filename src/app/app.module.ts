@@ -37,6 +37,8 @@ import { AdminComponent } from './component/admin/admin.component';
 import { DatabaseService } from './shared/database.service';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TeamDetailComponent,
     AdminComponent,
     SidebarComponent,
+    HomeComponent,
+    FooterComponent,
 
   ],
   imports: [

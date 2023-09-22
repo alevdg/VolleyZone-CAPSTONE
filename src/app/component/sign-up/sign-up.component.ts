@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
-import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,39 +9,41 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  name = new FormControl('');
-  surname = new FormControl('');
-  email = new FormControl('');
-  password = new FormControl('');
+  registerForm: FormGroup;
   errorMessage: string;
-  terms = new FormControl(false);
 
-  constructor(public authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
     this.errorMessage = '';
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      terms: [false, Validators.requiredTrue]
+    });
+  }
 
-  signUp(): void {
-    // Check if name, surname, email, and password are not empty
-    if (this.name.value.trim() === '' || this.surname.value.trim() === '' || this.email.value.trim() === '' || this.password.value.trim() === '') {
+  signUp() {
+    if (this.registerForm.valid) {
+      const { name, surname, email, password } = this.registerForm.value;
+      this.authService.SignUp(email, password, name, surname)
+        .then(() => {
+          console.log('User signed up successfully!');
+          this.router.navigate(['/Login']);
+        })
+        .catch(error => {
+          console.error(error);
+          this.errorMessage = 'There was an error signing up. Please try again.';
+        });
+    } else {
       this.errorMessage = 'Please fill in all fields.';
-      return;
     }
-
-    // Check if terms of service are agreed
-    if (!this.terms.value) {
-      this.errorMessage = 'You must agree to the terms of service.';
-      return;
-    }
-
-    this.authService.SignUp(this.email.value, this.password.value, this.name.value, this.surname.value)
-      .then(() => {
-        console.log('User signed up successfully!');
-      })
-      .catch(error => {
-        console.error(error);
-        this.errorMessage = 'There was an error signing up. Please try again.';
-      });
   }
 }
