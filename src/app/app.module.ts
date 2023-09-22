@@ -35,6 +35,7 @@ import { SidebarComponent } from './pages/side-bar/side-bar.component';
 import { TeamDetailComponent } from './component/team-detail/team-detail.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { DatabaseService } from './shared/database.service';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({

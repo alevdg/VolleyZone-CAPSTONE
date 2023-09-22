@@ -1,38 +1,73 @@
-<section class="h-100 gradient-form" style="background-color: #eee">
+<section class="h-100">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
+        <!-- Card container -->
         <div class="card rounded-3 text-black">
           <div class="row g-0">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
               <div class="card-body p-md-5 mx-md-4">
-                <div class="text-center">
+                <!-- Success alert -->
+                <div
+                  *ngIf="successMessage"
+                  class="alert alert-success"
+                  role="alert"
+                >
+                  {{ successMessage }}
+                </div>
+
+                <!-- Error alert -->
+                <div
+                  *ngIf="errorMessage"
+                  class="alert alert-danger"
+                  role="alert"
+                >
+                  {{ errorMessage }}
+                </div>
+
+                <!-- Warning alert -->
+                <div
+                  *ngIf="warningMessage"
+                  class="alert alert-warning"
+                  role="alert"
+                >
+                  {{ warningMessage }}
+                </div>
+
+                <!-- Logo and title -->
+                <div
+                  class="text-center d-flex align-items-center justify-content-center mb-3"
+                >
                   <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                    style="width: 185px"
+                    src="../../../assets/img/logo vz.png"
+                    width="50rem"
                     alt="logo"
                   />
-                  <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                  <h1 class="ms-3">VOLLEYZONE</h1>
                 </div>
+
+                <!-- Login form -->
                 <form (ngSubmit)="signIn()" novalidate>
-                  <p>Please login to your account</p>
-                  <div class="form-outline mb-4">
+                  <!-- Email input -->
+                  <div class="form-outline mb-4 w-100">
                     <input
                       type="email"
                       id="email"
-                      class="form-control"
+                      class="form-control form-control-lg"
                       [(ngModel)]="email"
                       name="email"
-                      placeholder="Phone number or email address"
+                      placeholder="Email address"
                       required
                     />
-                    <label class="form-label" for="email">Username</label>
+                    <label class="form-label" for="email">Email</label>
                   </div>
-                  <div class="form-outline mb-4">
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4 w-100">
                     <input
                       type="password"
                       id="password"
-                      class="form-control"
+                      class="form-control form-control-lg"
                       [(ngModel)]="password"
                       name="password"
                       placeholder="Password"
@@ -40,38 +75,34 @@
                     />
                     <label class="form-label" for="password">Password</label>
                   </div>
-                  <div class="text-center pt-1 mb-5 pb-1">
+
+                  <!-- Login button -->
+                  <div
+                    class="text-center pt-1 mb-5 pb-1 d-flex flex-column align-items-center w-100"
+                  >
                     <button
-                      class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                      class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn-lg"
                       type="submit"
                     >
                       Log in
                     </button>
-                    <a class="text-muted" href="#!">Forgot password?</a>
+                    <a class="text-white-muted" href="#!">Forgot password?</a>
                   </div>
+
+                  <!-- Create new account button -->
                   <div
-                    class="d-flex align-items-center justify-content-center pb-4"
+                    class="d-flex align-items-center justify-content-center pb-4 w-100"
                   >
                     <p class="mb-0 me-2">Don't have an account?</p>
-                    <button type="button" class="btn btn-outline-danger">
-                      Create new
+                    <button
+                      routerLink="/Register"
+                      type="button"
+                      class="btn btn-outline-danger btn-lg"
+                    >
+                      JOIN US
                     </button>
                   </div>
                 </form>
-                <div *ngIf="errorMessage" class="error-message">
-                  {{ errorMessage }}
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">We are more than just a company</h4>
-                <p class="small mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
               </div>
             </div>
           </div>
