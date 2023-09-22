@@ -50,7 +50,7 @@ export class AuthService {
     if (teamId) {
       this.router.navigate(['Team']); // Replace 'team' with your actual team page route
     } else {
-      this.router.navigate(['Dashboard']);
+      this.router.navigate(['Home']);
     }
 
     return this.updateUserData(result.user);
@@ -91,7 +91,7 @@ export class AuthService {
   // Auth logic to run auth providers
   async AuthLogin(provider: any) {
     const result = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['Home']);
     return this.updateUserData(result.user);
   }
 
@@ -99,7 +99,7 @@ export class AuthService {
   async SignOut() {
     await this.afAuth.signOut();
     localStorage.removeItem('user');
-    this.router.navigate(['sign-in']);
+    this.router.navigate(['Login']);
   }
 
   // Get current user

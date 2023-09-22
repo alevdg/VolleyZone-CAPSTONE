@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { iTeam } from './../../shared/teams'; // Replace with the actual path to your team member model
+import { iTeam } from './../../shared/teams';
 
 @Component({
   selector: 'app-team',
@@ -17,7 +17,7 @@ export class TeamPageComponent implements OnInit {
   }
 
   getTeamMembers(): void {
-    this.firestore.collection<iTeam>('team').valueChanges().subscribe((teamMembers: iTeam[]) => {
+    this.firestore.collection<iTeam>('Ftn8NLM9EE65oPlzMTMd').valueChanges().subscribe((teamMembers: iTeam[]) => {
       this.teamMembers = teamMembers;
     });
   }
