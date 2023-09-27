@@ -1,428 +1,496 @@
-<!-- Top navigation -->
-<app-sidebar></app-sidebar>
+<app-sidebar></app-sidebar>g
 <!-- src="{{ user.photoURL ? user.photoURL : '/assets/dummy-user.png' }}"
             alt="{{ user.displayName }}"
                 user.displayName ? user.displayName : "User"
               User ID: <strong>{{ user.uid }}</strong>
               Email: <strong>{{ user.email }}</strong>
               Email Verified: <strong>{{ user.emailVerified }}</strong> -->
+<!-- Page Container -->
 <div class="container">
+  <!-- The Grid -->
   <div class="row">
-    <!-- First column -->
-    <div class="col-md">
-      <div class="mt-4 px-0">
-        <div
-          class="bg-dark text-white rounded-top-2 rounded-bottom-2 pb-2 pt-2 text-center"
-        >
-          <img
-            src="../../../assets/img/hinata.png"
-            alt="profile"
-            class="rounded-circle mx-auto d-block mt-2"
-            width="100"
-            height="100"
-          />
-          <h6 class="pt-4 clickable">Hinata Shoyo</h6>
-          <p class="text-secondary px-2">Karasuno</p>
-          <hr />
-          <p class="mb-0 text-secondary px-2 clickable">My Profile</p>
-          <hr />
-          <a routerLink="/my-network" class="text-decoration-none">
-            <p class="mb-0 text-secondary px-2 clickable">Teammates</p>
-          </a>
-          <hr />
-          <p class="mb-0 text-secondary px-2">
-            <a
-              href=""
-              class="text-secondary text-decoration-none"
-              target="_blank clickable"
-              >Expand your circle</a
-            >
+    <!-- Left Column -->
+    <div class="col-md-3">
+      <!-- Profile -->
+      <div class="card profile-card">
+        <div class="card-body text-center">
+          <h4 class="card-title">My Profile</h4>
+          <p class="text-center profile-image">
+            <img
+              src="../../../assets/img/hinata.png"
+              class="rounded-circle"
+              alt="Avatar"
+            />
           </p>
           <hr />
-          <p class="px-2 text-secondary mb-2 clickable">My Team</p>
-          <hr />
-          <p class="px-2 text-secondary mb-2 clickable">Trainings</p>
+          <p
+            class="d-flex align-items-center justify-content-center profile-info"
+          >
+            <i class="bi bi-pencil-fill mr-2"></i> Karasuno
+          </p>
+          <p
+            class="d-flex align-items-center justify-content-center profile-info"
+          >
+            <i class="bi bi-house-fill mr-2"></i> Tokyo, Japan
+          </p>
+          <p
+            class="d-flex align-items-center justify-content-center profile-info"
+          >
+            <i class="bi bi-gift-fill mr-2"></i> April 1, 1988
+          </p>
+        </div>
+
+        <!-- Accordion -->
+        <div class="card">
+          <div class="card-body">
+            <button
+              (click)="toggleGroups()"
+              class="btn btn-block text-left"
+              type="button"
+              [attr.aria-expanded]="showGroups"
+            >
+              <i class="bi bi-microsoft-teams"></i> My Groups
+            </button>
+            <div *ngIf="showGroups">
+              <p class="accordionP">Karasuno</p>
+            </div>
+            <button
+              (click)="toggleTrainings()"
+              class="btn btn-block text-left"
+              type="button"
+              [attr.aria-expanded]="showTrainings"
+            >
+              <i class="bi bi-calendar-check-fill"></i> My Trainings
+            </button>
+            <div *ngIf="showTrainings">
+              <p class="accordionP">Karasuno High School 29/03/2023</p>
+            </div>
+            <button
+              (click)="togglePhotos()"
+              class="btn btn-block text-left"
+              type="button"
+              [attr.aria-expanded]="showPhotos"
+            >
+              <i class="bi bi-images"></i> My Photos
+            </button>
+            <div *ngIf="showPhotos" class="collapse">
+              <div class="row">
+                <div class="col">
+                  <img src="/w3images/lights.jpg" class="img-fluid mb-2" />
+                </div>
+                <div class="col">
+                  <img src="/w3images/nature.jpg" class="img-fluid mb-2" />
+                </div>
+                <div class="col">
+                  <img src="/w3images/mountains.jpg" class="img-fluid mb-2" />
+                </div>
+                <div class="col">
+                  <img src="/w3images/forest.jpg" class="img-fluid mb-2" />
+                </div>
+                <div class="col">
+                  <img src="/w3images/nature.jpg" class="img-fluid mb-2" />
+                </div>
+                <div class="col">
+                  <img src="/w3images/snow.jpg" class="img-fluid mb-2" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- End Left Column -->
     </div>
-
-    <!-- Second column -->
-    <div class="col-6">
-      <div class="mt-4 px-0 bg-dark border rounded-3">
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <form class="w-100">
-            <input
-              type="text"
-              id="add-post"
-              placeholder="Start a post"
-              class="rounded-pill border border-1 py-2 ms-3 w-90"
-            />
-          </form>
-        </div>
-        <div class="d-flex px-4 justify-content-between">
-          <div class="text-primary d-flex align-items-baseline">
-            <i class="bi bi-image"></i>
-            <p class="text-secondary ms-1">Media</p>
-          </div>
-          <div class="text-warning d-flex align-items-baseline">
-            <i class="bi bi-calendar3"></i>
-            <p class="text-secondary ms-1">Event</p>
-          </div>
-          <div class="text-danger d-flex align-items-baseline">
-            <i class="bi bi-journal-richtext"></i>
-            <p class="text-secondary ms-1">Scrivi cosa pensi</p>
-          </div>
-        </div>
-      </div>
-      <!-- inizio post -->
-      <div class="mt-4 px-0 bg-white border rounded-3">
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <i class="bi bi-x-lg text-secondary"></i>
-        </div>
-        <div class="d-flex flex-column ms-2">
-          <div>
-            <h6 class="mb-0">
-              Hinata Shoyo
-              <span class="text-secondary">&centerdot; 1&deg;</span>
-            </h6>
-            <p class="text-secondary p-0 m-0 user-info">Karasuno</p>
-            <p class="text-secondary p-0 m-0 user-info">
-              4 ore
-              <span>&centerdot; <i class="bi bi-globe-americas"></i></span>
-            </p>
-          </div>
-        </div>
-        <br />
-        <div>
-          <p class="ms-4">Can't wait to play volleyball!</p>
-        </div>
-        <div class="d-flex px-4 justify-content-between">
-          <div class="d-flex align-items-baseline" ngbDropdown placement="top">
-            <div id="dropdownBasic2" ngbDropdownToggle class="clickable">
-              <div class="d-flex align-items-baseline">
-                <i class="bi bi-hand-thumbs-up text-secondary"></i>
-                <p class="text-secondary ms-1">Recommend</p>
+    <!-- Middle Column -->
+    <div class="col-md-6">
+      <!-- create post -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card round white">
+            <div class="card-body bg-light">
+              <h6>How was your volleyball practice today?</h6>
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Status: Feeling Blue"
+                  id="floatingTextarea"
+                  style="resize: none"
+                ></textarea>
+                <label for="floatingTextarea" class="text-dark"
+                  >Express your thoughts</label
+                >
               </div>
+              <button type="button" class="float-right btn-primary">
+                <i class="bi bi-pencil"></i> Post
+              </button>
             </div>
           </div>
         </div>
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <div>
-            <input
-              type="text"
-              id="add-post"
-              placeholder="Add a comment..."
-              class="rounded-pill border border-1 py-1 ms-2 border border-2"
-            />
-          </div>
-        </div>
       </div>
-      <!-- fine post -->
-      <!-- inizio post -->
-      <div class="mt-4 px-0 bg-white border rounded-3">
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <i class="bi bi-x-lg text-secondary"></i>
-        </div>
-        <div class="d-flex flex-column ms-2">
-          <div>
-            <h6 class="mb-0">
-              Tobio Kageyana
-              <span class="text-secondary">&centerdot; 1&deg;</span>
-            </h6>
-            <p class="text-secondary p-0 m-0 user-info">Karasuno</p>
-            <p class="text-secondary p-0 m-0 user-info">
-              21 minuti
-              <span>&centerdot; <i class="bi bi-globe-americas"></i></span>
-            </p>
-          </div>
-        </div>
-        <br />
-        <div>
-          <p class="ms-4">I'm feeling like a king today.</p>
-        </div>
-        <div class="d-flex px-4 justify-content-between">
-          <div class="d-flex align-items-baseline" ngbDropdown placement="top">
-            <div id="dropdownBasic2" ngbDropdownToggle class="clickable">
-              <div class="d-flex align-items-baseline">
-                <i class="bi bi-hand-thumbs-up text-secondary"></i>
-                <p class="text-secondary ms-1">Recommend</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <div>
-            <input
-              type="text"
-              id="add-post"
-              placeholder="Add a comment..."
-              class="rounded-pill border border-1 py-1 ms-2 border border-2"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- fine post -->
-      <!-- inizio post -->
-      <div class="mt-4 px-0 bg-white border rounded-3">
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <i class="bi bi-x-lg text-secondary"></i>
-        </div>
-        <div class="d-flex flex-column ms-2">
-          <div>
-            <h6 class="mb-0">
-              Kei Tsukishima
-              <span class="text-secondary">&centerdot; 1&deg;</span>
-            </h6>
-            <p class="text-secondary p-0 m-0 user-info">Karasuno</p>
-            <p class="text-secondary p-0 m-0 user-info">
-              21 minuti
-              <span>&centerdot; <i class="bi bi-globe-americas"></i></span>
-            </p>
-          </div>
-        </div>
-        <br />
-        <div>
-          <p class="ms-4">I will block you Ushijima./p></p>
-        </div>
-
-        <div class="d-flex px-4 justify-content-between">
-          <div class="d-flex align-items-baseline" ngbDropdown placement="top">
-            <div id="dropdownBasic2" ngbDropdownToggle class="clickable">
-              <div class="d-flex align-items-baseline">
-                <i class="bi bi-hand-thumbs-up text-secondary"></i>
-                <p class="text-secondary ms-1">Recommend</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <div>
-            <input
-              type="text"
-              id="add-post"
-              placeholder="Add a comment..."
-              class="rounded-pill border border-1 py-1 ms-2 border border-2"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- fine post -->
-      <!-- inizio post -->
-      <div class="mt-4 px-0 bg-white border rounded-3">
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <i class="bi bi-x-lg text-secondary"></i>
-        </div>
-        <div class="d-flex flex-column ms-2">
-          <div>
-            <h6 class="mb-0">
-              Tetsurō Kuroo
-              <span class="text-secondary">&centerdot; 1&deg;</span>
-            </h6>
-            <p class="text-secondary p-0 m-0 user-info">Nekoma</p>
-            <p class="text-secondary p-0 m-0 user-info">
-              48 minuti
-              <span>&centerdot; <i class="bi bi-globe-americas"></i></span>
-            </p>
-          </div>
-        </div>
-        <br />
-        <div>
-          <p class="ms-4">Can't wait to play with Kenma!</p>
-        </div>
-        <div class="d-flex px-4 justify-content-between">
-          <div class="d-flex align-items-baseline" ngbDropdown placement="top">
-            <div id="dropdownBasic2" ngbDropdownToggle class="clickable">
-              <div class="d-flex align-items-baseline">
-                <i class="bi bi-hand-thumbs-up text-secondary"></i>
-                <p class="text-secondary ms-1">Recommend</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center mt-2 mx-auto p-3">
-          <div>
-            <input
-              type="text"
-              id="add-post"
-              placeholder="Add a comment..."
-              class="rounded-pill border border-1 py-1 ms-2 border border-2"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- fine post -->
-      <!-- 3 colonna -->
-    </div>
-    <div class="col-3">
-      <div>
-        <div class="card mb-2 bg-dark">
-          <
-          <h6 class="pt-2 px-3 fw-bold mb-0">Player you may know</h6>
-          <span class="text-secondary px-3">From your city</span>
-          <!-- profilo -->
-          <div class="card-body px-0 pb-4 border-bottom">
-            <div class="d-flex justify-content-between align-items-center px-3">
-              <div class="d-flex align-items-center gap-2">
+      <!-- end create post -->
+      <br />
+      <!--  post 1 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card rounded bg-white mb-3">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
                 <img
                   src="../../../assets/img/kageyama.png"
-                  alt="profile"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
+                  alt="Avatar"
+                  class="rounded-circle mr-2"
+                  style="width: 50px"
                 />
-                <div>
-                  <p class="text-white fw-bold m-0">Tobio Kageyana</p>
-                  <p class="mb-2">Karasuno</p>
-                  <button
-                    type="button"
-                    class="btn rounded-pill border border-2 border-secondary px-3 text-secondary"
-                  >
-                    <span><i class="bi bi-person-plus"></i> Connect</span>
-                  </button>
+                <h4 class="card-title mb-0">Tobio Kageyama</h4>
+              </div>
+              <span class="text-muted">16 min</span>
+              <hr class="clearfix" />
+              <p class="card-text">
+                Had a great practice session today! Can't wait for the next
+                training!
+              </p>
+              <button type="button" class="btn btn-primary mb-2 mr-2">
+                <i class="bi bi-hand-thumbs-up-fill"></i> Like
+              </button>
+              <!-- start comment section -->
+              <button
+                type="button"
+                class="btn btn-secondary mb-2"
+                (click)="showComments = !showComments"
+              >
+                <i class="bi bi-chat-left-text-fill"></i> Comment
+              </button>
+
+              <div *ngIf="showComments">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea"
+                    [(ngModel)]="comment"
+                  ></textarea>
+                  <label for="floatingTextarea">Comments</label>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-2"
+                  (click)="saveComment()"
+                >
+                  Submit
+                </button>
+              </div>
+
+              <!-- Display the saved comment -->
+              <div *ngIf="savedComment" class="card bg-light mb-3">
+                <div class="card-header">Comments</div>
+                <div class="card-body">
+                  <p class="card-text">{{ savedComment }}</p>
                 </div>
               </div>
+              <!-- comment section -->
             </div>
           </div>
-          <!-- fine profilo -->
-          <!-- profilo -->
-          <div class="card-body px-0 pb-4 border-bottom">
-            <div class="d-flex justify-content-between align-items-center px-3">
-              <div class="d-flex align-items-center gap-2">
+        </div>
+      </div>
+      <!-- end  post 1 -->
+      <!--  post 2 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card rounded bg-white mb-3">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
                 <img
                   src="../../../assets/img/tsukki.png"
-                  alt="profile"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
+                  alt="Avatar"
+                  class="rounded-circle mr-2"
+                  style="width: 50px"
                 />
-                <div>
-                  <p class="text-white fw-bold m-0">Kei Tsukishima</p>
-                  <p class="mb-2">Karasuno</p>
-                  <button
-                    type="button"
-                    class="btn rounded-pill border border-2 border-secondary px-3 text-secondary"
-                  >
-                    <span><i class="bi bi-person-plus"></i> Connect</span>
-                  </button>
+                <h4 class="card-title mb-0">Kei Tsukishima</h4>
+              </div>
+              <span class="text-muted">30 sec</span>
+              <hr class="clearfix" />
+              <p class="card-text">
+                Had a great practice session today! Can't wait for the next
+                training!
+              </p>
+              <button type="button" class="btn btn-primary mb-2 mr-2">
+                <i class="bi bi-hand-thumbs-up-fill"></i> Like
+              </button>
+              <!-- start comment section -->
+              <button
+                type="button"
+                class="btn btn-secondary mb-2"
+                (click)="showComments = !showComments"
+              >
+                <i class="bi bi-chat-left-text-fill"></i> Comment
+              </button>
+
+              <div *ngIf="showComments">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea"
+                    [(ngModel)]="comment"
+                  ></textarea>
+                  <label for="floatingTextarea">Comments</label>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-2"
+                  (click)="saveComment()"
+                >
+                  Submit
+                </button>
+              </div>
+
+              <!-- Display the saved comment -->
+              <div *ngIf="savedComment" class="card bg-light mb-3">
+                <div class="card-header">Comments</div>
+                <div class="card-body">
+                  <p class="card-text">{{ savedComment }}</p>
                 </div>
               </div>
+              <!-- comment section -->
             </div>
           </div>
-          <!-- fine profilo -->
-          <!-- profilo -->
-          <div class="card-body px-0 pb-4 border-bottom">
-            <div class="d-flex justify-content-between align-items-center px-3">
-              <div class="d-flex align-items-center gap-2">
+        </div>
+      </div>
+      <!-- end  post 2 -->
+      <!--  post 3 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card rounded bg-white mb-3">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
                 <img
                   src="../../../assets/img/nishinoya.png"
-                  alt="profile"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
+                  alt="Avatar"
+                  class="rounded-circle mr-2"
+                  style="width: 50px"
                 />
-                <div>
-                  <p class="text-white fw-bold m-0">Yu Nishinoya</p>
-                  <p class="mb-2">Karasuno</p>
-                  <button
-                    type="button"
-                    class="btn rounded-pill border border-2 border-secondary px-3 text-secondary"
-                  >
-                    <span><i class="bi bi-person-plus"></i> Connect</span>
-                  </button>
+                <h4 class="card-title mb-0">Yu Nishinoya</h4>
+              </div>
+              <span class="text-muted">3 hour</span>
+              <hr class="clearfix" />
+              <p class="card-text">
+                Had a great practice session today! Can't wait for the next
+                training!
+              </p>
+              <button type="button" class="btn btn-primary mb-2 mr-2">
+                <i class="bi bi-hand-thumbs-up-fill"></i> Like
+              </button>
+              <!-- start comment section -->
+              <button
+                type="button"
+                class="btn btn-secondary mb-2"
+                (click)="showComments = !showComments"
+              >
+                <i class="bi bi-chat-left-text-fill"></i> Comment
+              </button>
+
+              <div *ngIf="showComments">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea"
+                    [(ngModel)]="comment"
+                  ></textarea>
+                  <label for="floatingTextarea">Comments</label>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-2"
+                  (click)="saveComment()"
+                >
+                  Submit
+                </button>
+              </div>
+
+              <!-- Display the saved comment -->
+              <div *ngIf="savedComment" class="card bg-light mb-3">
+                <div class="card-header">Comments</div>
+                <div class="card-body">
+                  <p class="card-text">{{ savedComment }}</p>
                 </div>
               </div>
+              <!-- comment section -->
             </div>
           </div>
-          <!-- fine profilo -->
         </div>
       </div>
-      <!-- People you may know section -->
-      <div>
-        <div class="card mb-2 bg-dark">
-          <h6 class="pt-2 px-3 fw-bold mb-0">Players you may know</h6>
-          <span class="text-secondary px-3">From your circle</span>
-          <!-- inizio profilo -->
-          <div class="card-body px-0 pb-4 border-bottom">
-            <div class="d-flex justify-content-between align-items-center px-3">
-              <div class="d-flex align-items-center gap-2">
-                <img
-                  src="../../../assets/img/kuuro.png"
-                  alt="profile"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
-                />
-                <div>
-                  <p class="text-white fw-bold m-0">Tetsurō Kuroo</p>
-                  <p class="mb-2">Nekoma</p>
-                  <button
-                    type="button"
-                    class="btn rounded-pill border border-2 border-secondary px-3 text-secondary"
-                  >
-                    <span><i class="bi bi-person-plus"></i> Connect</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- fine profilo -->
-          <!-- profilo -->
-          <div class="card-body px-0 pb-4 border-bottom">
-            <div class="d-flex justify-content-between align-items-center px-3">
-              <div class="d-flex align-items-center gap-2">
+      <!-- end  post 3 -->
+      <!--  post 4 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card rounded bg-white mb-3">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
                 <img
                   src="../../../assets/img/ushijima.png"
-                  alt="profile"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
+                  alt="Avatar"
+                  class="rounded-circle mr-2"
+                  style="width: 50px"
                 />
-                <div>
-                  <p class="text-white fw-bold m-0">Wakatoshi Ushijima</p>
-                  <p class="mb-2">Shiratorizawa</p>
-                  <button
-                    type="button"
-                    class="btn rounded-pill border border-2 border-secondary px-3 text-secondary"
-                  >
-                    <span><i class="bi bi-person-plus"></i> Connect</span>
-                  </button>
+                <h4 class="card-title mb-0">Wakatoshi Ushijima</h4>
+              </div>
+              <span class="text-muted">45 min</span>
+              <hr class="clearfix" />
+              <p class="card-text">
+                Had a great practice session today! Can't wait for the next
+                training!
+              </p>
+              <button type="button" class="btn btn-primary mb-2 mr-2">
+                <i class="bi bi-hand-thumbs-up-fill"></i> Like
+              </button>
+              <!-- start comment section -->
+              <button
+                type="button"
+                class="btn btn-secondary mb-2"
+                (click)="showComments = !showComments"
+              >
+                <i class="bi bi-chat-left-text-fill"></i> Comment
+              </button>
+
+              <div *ngIf="showComments">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea"
+                    [(ngModel)]="comment"
+                  ></textarea>
+                  <label for="floatingTextarea">Comments</label>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-2"
+                  (click)="saveComment()"
+                >
+                  Submit
+                </button>
+              </div>
+
+              <!-- Display the saved comment -->
+              <div *ngIf="savedComment" class="card bg-light mb-3">
+                <div class="card-header">Comments</div>
+                <div class="card-body">
+                  <p class="card-text">{{ savedComment }}</p>
                 </div>
               </div>
+              <!-- comment section -->
             </div>
           </div>
-          <!-- fine profilo -->
-          <!-- profilo -->
-          <div class="card-body px-0 pb-4 border-bottom">
-            <div class="d-flex justify-content-between align-items-center px-3">
-              <div class="d-flex align-items-center gap-2">
-                <img
-                  src="../../../assets/img/bokuto.png"
-                  alt="profile"
-                  class="rounded-circle"
-                  width="50"
-                  height="50"
-                />
-                <div>
-                  <p class="text-white fw-bold m-0">Kōtarō Bokuto</p>
-                  <p class="mb-2">Fukurōdani</p>
-                  <button
-                    type="button"
-                    class="btn rounded-pill border border-2 border-secondary px-3 text-secondary"
-                  >
-                    <span><i class="bi bi-person-plus"></i> Connect</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- fine profilo -->
         </div>
       </div>
-      <!-- fine people you may know section -->
+      <!-- end  post 4 -->
+      <!-- End Middle Column -->
     </div>
+    <!-- Right Column -->
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Upcoming Events:</h5>
+          <img
+            src="../../../assets/img/event.png"
+            class="img-fluid"
+            alt="Forest"
+          />
+          <h5 class="card-title"><strong>Road to Paris</strong></h5>
+          <p class="card-text">Volleyball Qualifier</p>
+          <a
+            href="https://olympics.com/en/news/volleyball-mens-olympic-qualifying-tournaments-preview-schedule-watch"
+            target="_blank"
+          >
+            <button class="btn btn-primary btn-block">Info</button>
+          </a>
+        </div>
+      </div>
+      <br />
+      <!-- start friend request -->
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Friend Request</h5>
+          <img
+            src="../../../assets/img/kuuro.png"
+            class="img-fluid rounded-circle w-50 mx-auto"
+            alt="Avatar"
+          />
+          <h6 class="card-subtitle mb-2 mt-2 text-muted">Tetsurō Kuroo</h6>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-success btn-block" title="Accept">
+                <i class="bi bi-check-lg"></i>Accept
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-danger btn-block" title="Decline">
+                <i class="bi bi-x-lg"></i>Decline
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end friend request -->
+      <br />
+      <!-- add friend 1 -->
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Players you might know</h5>
+          <img
+            src="../../../assets/img/kuuro.png"
+            class="img-fluid rounded-circle w-50 mx-auto"
+            alt="Avatar"
+          />
+          <h6 class="card-subtitle mb-2 mt-2 text-muted">Tetsurō Kuroo</h6>
+          <button
+            class="btn btn-success btn-block mt-3"
+            title="Send Friend Request"
+          >
+            <i class="bi bi-person-plus"></i> Send Friend Request
+          </button>
+        </div>
+      </div>
+      <!-- end add friends 1 -->
+      <!-- add friend 2-->
+      <div class="card text-center">
+        <div class="card-body">
+          <img
+            src="../../../assets/img/kuuro.png"
+            class="img-fluid rounded-circle w-50 mx-auto"
+            alt="Avatar"
+          />
+          <h6 class="card-subtitle mb-2 mt-2 text-muted">Tetsurō Kuroo</h6>
+          <button
+            class="btn btn-success btn-block mt-3"
+            title="Send Friend Request"
+          >
+            <i class="bi bi-person-plus"></i> Send Friend Request
+          </button>
+        </div>
+      </div>
+      <!-- end add friends 3 -->
+      <div class="card text-center">
+        <div class="card-body">
+          <img
+            src="../../../assets/img/kuuro.png"
+            class="img-fluid rounded-circle w-50 mx-auto"
+            alt="Avatar"
+          />
+          <h6 class="card-subtitle mb-2 mt-2 text-muted">Tetsurō Kuroo</h6>
+          <button
+            class="btn btn-success btn-block mt-3"
+            title="Send Friend Request"
+          >
+            <i class="bi bi-person-plus"></i> Send Friend Request
+          </button>
+        </div>
+      </div>
+      <!-- end add friends 3-->
+      <!-- End Right Column -->
+    </div>
+    <!--  -->
   </div>
 </div>
+
 <app-footer></app-footer>

@@ -1,216 +1,66 @@
-#logo{
-  img{
-height: 25px;
-  }
-}
+.navbar {
+  background-color: #343a40;
+  color: white;
+  padding:10px;
 
-.top-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #212529;
-  color: #E49622;
-  height: 50px;
-  padding: 2.5em 1em;
-  position: sticky;
-  top: 0;
-  z-index: 4;
-}
 
-.item a {
-  text-decoration: none;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
-  padding-top: 8px;
-  font-size: 1.2em;
-}
-
-.menu > li {
-  margin: 0 1rem;
-}
-
-.menu-button-container {
-  display: none;
-  height: 100%;
-  width: 30px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-.menu-button,
-.menu-button::before,
-.menu-button::after {
-  display: block;
-  background-color: #E49622;
-  position: absolute;
-  height: 4px;
-  width: 30px;
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  border-radius: 2px;
-}
-
-.menu-button::before {
-  content: '';
-  margin-top: -8px;
-}
-
-.menu-button::after {
-  content: '';
-  margin-top: 8px;
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button::before {
-  margin-top: 0px;
-  transform: rotate(45deg);
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button {
-  background: rgba(255, 255, 255, 0);
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button::after {
-  margin-top: 0px;
-  transform: rotate(-45deg);
-}
-
-.dropHeader {
-  -webkit-transition: 0.04s ease-in-out;
-  transition: 0.04s ease-in-out;
-  display: flex;
-}
-
-.list {
-  width: 100%;
-  padding-left: 0;
-  position: absolute;
-  z-index: 1;
-  top: 70px;
-  left: 0px;
-  border-top: 1px solid #eee;
-  visibility: hidden;
-  opacity: 0;
-  cursor: pointer;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  width: 100%;
-  line-height: 3rem;
-  padding-left: 175px;
-  background-color: #E49622;
-  border-color: #212529;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-weight: 400;
-  list-style-type:none;
-  text-align:center;
-  text-transform: uppercase;
-
-}
-
-.item a{
-  text-decoration: none;
-  color:black
-}
-
-.item a:hover{
-  color: #E49622;
-}
-
-.item:hover {
-  background-color: #E49622;
-}
-
-#drop-4:checked~ .list {
-  visibility: visible;
-  opacity: 2;
-  -webkit-transform: translateY(0px);
-  transform: translateY(0px);
-}
-@media (max-width: 48em) {
-
-  .top-nav{
-    display: flex;
-    justify-content: space-between;
+  .navbar-brand {
+    color: #E49622;
+    font-weight: bold;
   }
 
-  .menu-button-container {
-    display: flex;
+  .nav-link {
+    i {
+      color: #E49622;
+      font-size: 30px;
+    }
   }
 
-  .menu {
-    position: absolute;
-    top: 0;
-    margin-top: 50px;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    justify-content:center;
-    align-items:center;
-    padding-left: 0;
+  .nav-item.dropdown .nav-link.dropdown-toggle {
+    i {
+      color: #E49622;
+      font-size: 30px;
+      position: relative;
+    }
+
+    .badge {
+      background-color: #E49622;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .li {
+      list-style-type: none;
+    }
+
   }
 
-  #menu-toggle ~ .menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    display: none;
+  .dropdown-menu {
+    min-width: 300px;
+
+    .dropdown-item:hover {
+      background-color: #E49622;
+      color: white;
+    }
   }
 
-  #menu-toggle:checked ~ .menu li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: inherit;
-    flex-grow: 3;
-    height: auto;
+  @media (min-width: 768px) {
+    .navbar-toggler {
+      display: none;
+    }
+
+    .nav-link {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+
+    .nav-link:hover {
+      background-color: #333;
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+    }
   }
-
-  .menu > li {
-    width: 100%;
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  #drop-4~.list {
-  display: none;
-  }
-
-  #drop-4:checked~ .list{
-    visibility: visible;
-    display: block;
-    opacity: 2;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-
-  .item{
-    line-height: 1.7rem;
-  }
-
-
-  .list{
-    position: static;
-    border-bottom: 1px solid #eee;
-  }
-
-
-
 }

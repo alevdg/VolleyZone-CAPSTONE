@@ -1,68 +1,167 @@
-#box-img {
-  position: relative;
+.container {
+  max-width: 1400px;
+  margin-top: 80px;
 }
-
-
-#profile-img-post {
-  img {
-    width: 50px;
-    height: 50px;
+// left column style
+.profile-card {
+  .card-body {
+    background-color:#E49622;
+    .profile-image {
+      img.rounded-circle {
+        height: 106px;
+        width: 106px;
+      }
+    }
+    .profile-info {
+      i {
+        margin-right: 0.5rem;
+      }
+    }
   }
 }
-.logo-box {
-  width: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.follow-btn {
-  width: 7em;
-  height: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-    background-color: lightgray;
-    border: 2px solid black;
+
+.row {
+  .col-md-3 {
+    .card {
+      &.rounded, &.white {
+        .card-body {
+          h4.card-title {
+            text-align: center;
+          }
+          p.text-center {
+            img.rounded-circle {
+              height: 106px;
+              width: 106px;
+            }
+          }
+          hr {
+            margin: 0.5rem 0;
+          }
+          p {
+            i.bi-pencil-fill, i.bi-house-fill, i.bi-gift-fill {
+              margin-right: 0.25rem;
+              color: #333;
+            }
+          }
+        }
+      }
+      .card-body {
+        button.btn {
+          i.bi-microsoft-teams, i.bi-calendar-check-fill, i.bi-images {
+            margin-right: 0.25rem;
+            color: #333;
+          }
+        }
+        .collapse {
+          p {
+            margin-bottom: 1rem;
+          }
+        }
+        .row {
+          .col {
+            img.img-fluid {
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+    .card.d-none.d-sm-block {
+      .card-body {
+        p {
+          span.badge {
+            margin-right: 0.25rem;
+          }
+        }
+      }
+    }
   }
-}
-.clickable:hover {
-  cursor: pointer;
-}
-.recommendation {
-  width: 15em;
-}
-.recommendation:hover {
-  background-color: rgba(239, 239, 239, 0.65);
-  border-radius: 5px;
-}
-.profile-pic {
-  width: 50px;
-  height: 50px;
-}
+  .accordionP {
+    background-color: white;
+  }
 
-#add-post {
-  width: 350px;
-}
-
-.user-info {
-  font-size: 0.8em;
-}
-// button connect
-.btn.rounded-pill.border.border-2.border-secondary.px-3.text-secondary{
-  background-color: #E49622;
-  color: black;
-}
-
-p.text-secondary.px-2,p.text-secondary.ms-1,
-a.text-decoration-none {
-  color: #E49622!important;
-}
-
-p.mb-2 {
-  color: #E49622!important;
-}
+  // post - style
+  .card-body.bg-light { 
+    color: #E49622; 
+  
+    h6 {
+      color: #E49622 ;
+    }
+  
+    .form-floating {
+      textarea.form-control {
+        color: #E49622; 
+      }
+  
+      label.text-dark {
+        color: #E49622!important; 
+        opacity: 80%;
+      }
+    }
+  
+    button.float-right {
+      float: right ;
+      background-color: #E49622;
+      border-color: #E49622;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  }
 
 
+  
 
-
-
+  // comment - style
+  .card.bg-light {
+    background-color: #f8f9fa !important; // Light background
+  
+    .card-body {
+      .card-text {
+        margin-bottom: 0; // Remove bottom margin
+      }
+    }
+  }
+  
+  .btn-primary {
+    background-color: #E49622 ;
+    border-color: #E49622 ;
+  }
+  
+  // right column style
+  .col-md-2 {
+    .card {
+      border-radius: .25rem;
+      background-color: #fff;
+      text-align: center;
+      
+      .btn-block {
+        display: block;
+        width: 100%;
+      }
+      
+      .btn-info {
+        background-color: theme-color("info");
+      }
+      
+      .btn-success {
+        background-color: theme-color("success");
+      }
+      
+      .btn-danger {
+        background-color: theme-color("danger");
+      }
+      
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      .rounded-circle {
+        border-radius: 50%;
+      }
+    }
+  }
+  
+  
+  
+}

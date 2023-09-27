@@ -1,19 +1,64 @@
 <app-sidebar></app-sidebar>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="text-center">Team Name</h1>
-      <p class="text-center">Team Description</p>
-    </div>
+
+<div class="container py-5 text-center" id="team">
+  <h1>KARASUNO</h1>
+  <p>Meet the team - our players:</p>
+  <br />
+  <div class="col">
+    <button class="btn btn-danger btn-block" title="Decline">
+      <i class="bi bi-x-lg"></i> Leave Team
+    </button>
   </div>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let teamMember of teamMembers">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">{{ teamMember.name }}</h5>
-          <p class="card-text">{{ teamMember.description }}</p>
+  <br />
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="../../../assets/img/kageyama.png"
+            alt="Kageyama"
+            class="rounded-circle team-img img-fluid w3-hover-opacity"
+          />
+          <h3>Tobio Kageyama</h3>
+          <p>Setter</p>
+        </div>
+
+        <div class="col-md-6">
+          <img
+            src="../../../assets/img/hinata.png"
+            alt="Hinata"
+            class="rounded-circle team-img img-fluid w3-hover-opacity"
+          />
+          <h3>Shoyo Hinata</h3>
+          <p>Middle Blocker</p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="../../../assets/img/tsukki.png"
+            alt="Tsukishima"
+            class="rounded-circle team-img img-fluid w3-hover-opacity"
+          />
+          <h3>Kei Tsukishima</h3>
+          <p>Middle Blocker</p>
+        </div>
+
+        <div class="col-md-6">
+          <img
+            src="../../../assets/img/nishinoya.png"
+            alt="Nishinoya"
+            class="rounded-circle team-img img-fluid w3-hover-opacity"
+          />
+          <h3>Yu Nishinoya</h3>
+          <p>Libero</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>

@@ -1,40 +1,52 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../shared/auth.service';
 import { DatabaseService } from '../../shared/database.service';
-import { docData } from '@angular/fire/firestore';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss']
 })
-export class SidebarComponent implements OnInit, OnDestroy {
+export class SidebarComponent {
   isAdmin = false;
-  private destroy$ = new Subject<void>();
 
   constructor(
     private authService: AuthService,
     private databaseService: DatabaseService
   ) { }
 
-  ngOnInit(): void {
-    this.checkUserRole();
+  openNav() {
+    // Your code here to open the navigation
+    console.log('Navigation opened');
   }
 
-  checkUserRole(): void {
-    this.authService.getCurrentUser().pipe(takeUntil(this.destroy$)).subscribe(currentUser => {
-      docData(this.databaseService.getRoleDocument(currentUser.uid))
-        .pipe(takeUntil(this.destroy$))
-        .subscribe((role: any) => {
-          this.isAdmin = role.admin;
-        });
-    });
+  onLogoClick() {
+    // Your code here for when the logo is clicked
+    console.log('Logo clicked');
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+  onNewsClick() {
+    // Your code here for when the News item is clicked
+    console.log('News clicked');
+  }
+
+  onAccountSettingsClick() {
+    // Your code here for when the Account Settings item is clicked
+    console.log('Account Settings clicked');
+  }
+
+  onMessagesClick() {
+    // Your code here for when the Messages item is clicked
+    console.log('Messages clicked');
+  }
+
+  onNotificationsClick() {
+    // Your code here for when the Notifications item is clicked
+    console.log('Notifications clicked');
+  }
+
+  onAvatarClick() {
+    // Your code here for when the Avatar is clicked
+    console.log('Avatar clicked');
   }
 }
