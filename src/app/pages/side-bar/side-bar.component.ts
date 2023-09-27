@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../shared/auth.service';
 import { DatabaseService } from '../../shared/database.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +14,8 @@ export class SidebarComponent {
 
   constructor(
     private authService: AuthService,
-    private databaseService: DatabaseService
+    private databaseService: DatabaseService,
+    private router: Router
   ) { }
 
   openNav() {
@@ -49,4 +52,9 @@ export class SidebarComponent {
     // Your code here for when the Avatar is clicked
     console.log('Avatar clicked');
   }
+
+  redirectToHomePage() {
+    this.router.navigate(['/Home']);
+  }
+
 }

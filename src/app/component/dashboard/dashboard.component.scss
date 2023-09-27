@@ -49,7 +49,7 @@
         button.btn {
           i.bi-microsoft-teams, i.bi-calendar-check-fill, i.bi-images {
             margin-right: 0.25rem;
-            color: #333;
+            color: #E49622;
           }
         }
         .collapse {
@@ -77,8 +77,15 @@
     }
   }
   .accordionP {
-    background-color: white;
+    background-color: #333;
+    color:#E49622;
+    text-align: center;
+    border-radius: 5px;
   }
+
+.text-left{
+  color: #E49622;
+}
 
   // post - style
   .card-body.bg-light { 

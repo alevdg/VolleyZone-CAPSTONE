@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,8 @@ export class DashboardComponent implements OnInit {
   comment = '';
   savedComment = '';
 
-  constructor(public authService: AuthService) { }
+  constructor(private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void { }
 
@@ -36,4 +38,9 @@ export class DashboardComponent implements OnInit {
     this.comment = '';
     this.showComments = false;
   }
+
+  redirectToTeamPage() {
+    this.router.navigate(['/Team']);
+  }
+
 }
