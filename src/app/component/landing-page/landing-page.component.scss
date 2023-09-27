@@ -1,7 +1,7 @@
 /* Start Landing Page */
 .landing-page {
   header {
-    min-height: 80px;
+    min-height: 100px;
     display: flex;
 
     @media (max-width: 767px) {
@@ -22,7 +22,7 @@
         color: #E49622;
         font-style: italic;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size:40px;
 
         @media (max-width: 767px) {
           margin-top: 20px;
@@ -60,7 +60,7 @@
 
         h1 {
           color: #E49622;
-          font-size: 44px;
+          font-size: 50px;
 
           @media (max-width: 600px) {
             font-size: 32px; /* Adjust this value as needed */
@@ -69,7 +69,7 @@
         p {
           margin: 0;
           line-height: 1.6;
-          font-size: 15px;
+          font-size: 30px;
           color: #000000;
           font-weight:400px ;
         }
