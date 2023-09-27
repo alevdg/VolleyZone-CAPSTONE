@@ -104,6 +104,7 @@
                         <label class="form-label" for="email">Your Email</label>
                         <div
                           *ngIf="
+                            registerForm.get('email') &&
                             registerForm.get('email').invalid &&
                             (registerForm.get('email').dirty ||
                               registerForm.get('email').touched)
@@ -168,6 +169,7 @@
                         >
                         <div
                           *ngIf="
+                            registerForm.get('repeatPassword') &&
                             registerForm.get('repeatPassword').invalid &&
                             (registerForm.get('repeatPassword').dirty ||
                               registerForm.get('repeatPassword').touched)
