@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   post4 = {
     showComments: false,
     comment: '',
-    savedComments: [['Great practice! Looking forward to the next training!']],
+    savedComments: [['Keep you eyes open, you idiot. Looking forward to the next training.']],
     liked: false,
     username: 'Tobio Kageyama',
     avatar: '../../../assets/img/kageyama.png'
