@@ -33,14 +33,20 @@ export class SignInComponent implements OnInit {
     this.authService.SignIn(this.email, this.password)
       .then(() => {
         console.log('User signed in successfully!');
-        this.successMessage = 'User signed in successfully!';
-        this.router.navigate(['/Dashboard']); // navigate to home page
+        this.successMessage = 'User signed in successfully!'; // Set the success message
+
+        // Display the success alert and then navigate to the landing page after 10 seconds
+        setTimeout(() => {
+          this.router.navigate(['/Dashboard']); // navigate to home page
+        }, 10000);
       })
       .catch(error => {
         console.error(error);
         this.errorMessage = 'There was an error signing in. Please try again.';
         this.warningMessage = 'User not registered in the database';
       });
+
   }
+
 
 }

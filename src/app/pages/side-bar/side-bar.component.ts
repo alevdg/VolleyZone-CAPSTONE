@@ -64,7 +64,7 @@ export class SidebarComponent {
 
       setTimeout(() => {
         this.router.navigate(['Login']);
-      }, 2000);  // Wait for 2 seconds
+      }, 6000);  // Wait for 6 seconds
     });
 
   }
