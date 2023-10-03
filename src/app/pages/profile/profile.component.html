@@ -14,11 +14,11 @@
       <div class="card bg-light">
         <div class="card-body">
           <img
-            src="/w3images/avatar_hat.jpg"
-            class="card-img rounded-circle mb-2"
+            src="../../../assets/img/hinata.png"
+            class="card-img rounded-square mb-2"
             alt="Avatar"
           />
-          <h2 class="text-black">Jane Doe</h2>
+          <h2 class="text-black">Hinata Shoyo</h2>
           <hr />
           <p><i class="fa fa-briefcase fa-fw text-teal"></i>Designer</p>
           <p><i class="fa fa-home fa-fw text-teal"></i>London, UK</p>
@@ -147,7 +147,7 @@
           <button
             type="button"
             [ngClass]="newPostText ? 'btn-success' : 'btn-primary'"
-            class="float-right btn mb-2 mr-2"
+            class="btn m-2 p-2 float-right"
             (click)="addPost()"
             style="transition: background-color 0.3s ease"
           >
@@ -156,106 +156,118 @@
         </div>
       </div>
       <!-- end post section  -->
-      <!-- post section -->
-      <div class="card bg-light">
-        <div class="card-body">
-          <div class="row" *ngFor="let post of posts">
-            <img
-              src="../../../assets/img/kageyama.png"
-              class="rounded-square w-50 mx-auto"
-              style="object-fit: contain"
-              alt="Avatar"
-            />
-            <h4 class="card-title mb-0">Tobio Kageyama</h4>
-          </div>
-          <span class="text-muted">{{ getTimeDifference(post) }}</span>
-          <hr class="clearfix" />
-          <p class="card-text">
-            {{ post.text }}
-          </p>
-          <button
-            type="button"
-            [ngClass]="post.liked ? 'btn-success' : 'btn-primary'"
-            class="btn mb-2 mr-2"
-            (click)="post.liked = !post.liked"
-            style="transition: background-color 0.3s ease"
-          >
-            <i class="bi bi-hand-thumbs-up-fill"></i>
-            {{ post.liked ? "You liked this post" : "Like" }}
-          </button>
-          <!-- start comment section -->
-          <button
-            type="button"
-            class="btn btn-secondary mb-2"
-            (click)="post.showComments = !post.showComments"
-          >
-            <i class="bi bi-chat-left-text-fill"></i> Comment
-          </button>
-
-          <div *ngIf="post.showComments">
-            <div class="form-floating">
-              <textarea
-                class="form-control"
-                placeholder="Leave a comment here"
-                id="floatingTextarea"
-                [(ngModel)]="post.comment"
-              ></textarea>
-              <label for="floatingTextarea">Comments</label>
+      <!-- generated posts section -->
+      <div class="col-md-12">
+        <div class="card rounded bg-white mb-3" *ngFor="let post of posts">
+          <div class="post-body">
+            <div class="d-flex align-itemss-center justify-content-start">
+              <img
+                src="../../../assets/img/hinata.png"
+                alt="Avatar"
+                class="rounded-square mr-2"
+                style="width: 50px"
+              />
+              <h4 class="card-title mb-0">Hinata Shoyo</h4>
             </div>
+            <span class="text-muted">{{ getTimeDifference(post) }}</span>
+            <hr class="clearfix" />
+            <p class="">
+              {{ post.text }}
+            </p>
             <button
               type="button"
-              class="btn btn-primary m-2"
-              (click)="saveComment(post)"
+              [ngClass]="post.liked ? 'btn-success' : 'btn-primary'"
+              class="btn mb-2 mr-2"
+              (click)="post.liked = !post.liked"
+              style="transition: background-color 0.3s ease"
             >
-              Submit
+              <i class="bi bi-hand-thumbs-up-fill"></i>
+              {{ post.liked ? "You liked this post" : "Like" }}
             </button>
-          </div>
+            <!-- start comment section -->
+            <button
+              type="button"
+              class="btn btn-secondary mb-2"
+              (click)="post.showComments = !post.showComments"
+            >
+              <i class="bi bi-chat-left-text-fill"></i> Comment
+            </button>
 
-          <!-- alert -->
-          <div *ngIf="showPostAlert" class="alert alert-danger" role="alert">
-            Please enter a comment before submitting!
-          </div>
-          <!-- alert -->
-          <div
-            *ngIf="showCommentAlert"
-            class="alert alert-danger"
-            role="alert"
-            style="position: fixed; top: 0; right: 0; z-index: 3; margin: 10px"
-          >
-            Please enter a comment before submitting!
-          </div>
-
-          <!-- Display the saved comments -->
-          <div
-            *ngFor="let commentData of post.savedComments"
-            class="card bg-light mb-3"
-          >
-            <div class="card-header">Comments</div>
-            <div class="card-body">
-              <div class="d-flex align-items-center">
-                <img
-                  [src]="commentData.avatar ? commentData.avatar : post.avatar"
-                  alt="Avatar"
-                  class="rounded-square mr-2"
-                  style="width: 40px"
-                />
-                <h5 class="card-text mb-0">
-                  {{
-                    commentData.username ? commentData.username : post.username
-                  }}
-                </h5>
+            <div *ngIf="post.showComments">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea"
+                  [(ngModel)]="post.comment"
+                ></textarea>
+                <label for="floatingTextarea">Leave a comment here</label>
               </div>
-              <hr />
-              <p class="card-text">
-                {{ commentData.comment ? commentData.comment : commentData }}
-              </p>
+              <button
+                type="button"
+                class="btn btn-primary m-2"
+                (click)="saveComment(post)"
+              >
+                Submit
+              </button>
             </div>
+
+            <!-- alert -->
+            <div *ngIf="showPostAlert" class="alert alert-danger" role="alert">
+              Please enter a comment before submitting!
+            </div>
+            <!-- alert -->
+            <div
+              *ngIf="showCommentAlert"
+              class="alert alert-danger"
+              role="alert"
+              style="
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: 3;
+                margin: 10px;
+              "
+            >
+              Please enter a comment before submitting!
+            </div>
+
+            <!-- Display the saved comments -->
+            <div
+              *ngFor="let commentData of post.savedComments"
+              class="card bg-light mb-3"
+            >
+              <div class="card-header">Comments</div>
+              <div class="post-body">
+                <div class="d-flex align-items-center">
+                  <img
+                    [src]="
+                      commentData.avatar ? commentData.avatar : post.avatar
+                    "
+                    alt="Avatar"
+                    class="rounded-square mr-2"
+                    style="width: 40px"
+                  />
+                  <h5 class="post-text mb-0">
+                    {{
+                      commentData.username
+                        ? commentData.username
+                        : post.username
+                    }}
+                  </h5>
+                </div>
+                <hr />
+                <p class="card-text">
+                  {{ commentData.comment ? commentData.comment : commentData }}
+                </p>
+              </div>
+            </div>
+            <!-- end display saved comments -->
           </div>
-          <!-- end display saved comments -->
         </div>
       </div>
-
       <!-- end post section  -->
+
       <!-- Work Experience Section -->
       <div class="card bg-light">
         <div class="card-body">

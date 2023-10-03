@@ -14,7 +14,10 @@
       <!-- Profile -->
       <div class="card profile-card">
         <div class="card-body text-center">
-          <h4 class="card-title">My Profile</h4>
+          <a routerLink="/Profile" style="text-decoration: none; color: black">
+            <h4 class="card-title">My Profile</h4>
+          </a>
+
           <p class="text-center profile-image">
             <img
               src="../../../assets/img/hinata.png"
@@ -79,10 +82,16 @@
             <div *ngIf="showPhotos" class="collapse">
               <div class="row">
                 <div class="col">
-                  <img src="/w3images/lights.jpg" class="img-fluid mb-2" />
+                  <img
+                    src="../../../assets/img/hinata.png"
+                    class="img-fluid mb-2"
+                  />
                 </div>
                 <div class="col">
-                  <img src="/w3images/nature.jpg" class="img-fluid mb-2" />
+                  <img
+                    src="../../../assets/img/kageyama.png"
+                    class="img-fluid mb-2"
+                  />
                 </div>
                 <div class="col">
                   <img src="/w3images/mountains.jpg" class="img-fluid mb-2" />
@@ -151,15 +160,15 @@
       <div class="row" *ngFor="let post of posts">
         <div class="col-md-12">
           <div class="card rounded bg-white mb-3">
-            <div class="card-body">
-              <div class="d-flex align-items-center">
+            <div class="post-body">
+              <div class="d-flex align-items-start">
                 <img
-                  src="../../../assets/img/kageyama.png"
-                  class="rounded-square w-50 mx-auto"
-                  style="object-fit: contain"
+                  src="../../../assets/img/hinata.png"
                   alt="Avatar"
+                  class="rounded-square mr-2"
+                  style="width: 50px"
                 />
-                <h4 class="card-title mb-0">Tobio Kageyama</h4>
+                <h4 class="card-title mb-0">Hinata Shoyo</h4>
               </div>
               <span class="text-muted">{{ getTimeDifference(post) }}</span>
               <hr class="clearfix" />

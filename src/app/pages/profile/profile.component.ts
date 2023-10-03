@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   showCommentAlert = false;
   showPostAlert = false;
 
-  // Array for user generated posts
+
   posts = [];
 
   private timeDifferenceInterval: any;

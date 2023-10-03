@@ -1,13 +1,15 @@
-
 .container {
   padding: 20px;
 }
+
 .card {
   margin-bottom: 20px;
+  background-color: #E49622;
 }
 
 .card-body {
-  text-align: center;
+  text-align: start;
+  color: black;
 }
 
 .card-img {
@@ -32,14 +34,14 @@
   line-height: 24px;
 }
 
-// right column
-.text-grey {
-  color: grey;
-}
+// // right column
+// .text-grey {
+//   color: grey;
+// }
 
-.text-org {
-  color: teal;
-}
+// .text-org {
+//   color: teal;
+// }
 
 .experience,
 .education {
@@ -49,4 +51,17 @@
 .badge {
   font-size: 12px;
   padding: 3px 6px;
+}
+
+// post style
+.post-body,
+.post-text,
+.btn,
+.form-control {
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: #E49622;
+  border-color: #E49622;
 }
