@@ -13,11 +13,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
   showCommentAlert = false;
   showPostAlert = false;
 
+  // Array for user generated posts
+  posts = [];
 
   private timeDifferenceInterval: any;
   private subscription: Subscription;
-
-  posts = [];
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -90,5 +90,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
     return `${minutes} min`;
   }
 
+  toggleComments(post) {
+    post.showComments = !post.showComments;
+  }
+  redirectToTeamPage() {
+    this.router.navigate(['/Team']);
+  }
 
 }
