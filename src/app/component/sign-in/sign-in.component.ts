@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Router } from '@angular/router';
+import { AuthGuard } from 'src/app/shared/guard/auth.guard';
 
 @Component({
   selector: 'app-sign-in',

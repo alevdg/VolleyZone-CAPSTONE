@@ -15,8 +15,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
-  { path: 'Login', component: SignInComponent },
-  { path: 'Register', component: SignUpComponent },
+  { path: 'Login', component: SignInComponent, canActivate: [AuthGuard] },
+  { path: 'Register', component: SignUpComponent, canActivate: [AuthGuard] },
   { path: 'Home', component: DashboardComponent },
   { path: 'Team', component: TeamPageComponent },
   { path: 'Manage', component: AdminComponent },

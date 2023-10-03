@@ -13,6 +13,8 @@ import { switchMap, take } from 'rxjs/operators';
 })
 export class AuthService {
   user$: Observable<iUser | null | undefined>;
+  successMessage = '';
+
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -35,13 +37,22 @@ export class AuthService {
     const userDoc = this.afs.doc<iUser>(`users/${result.user?.uid}`);
     const user = await userDoc.valueChanges().pipe(take(1)).toPromise();
     const teamId = user?.teamId ?? '';
-    if (teamId) {
-      this.router.navigate(['Team']);
-    } else {
-      this.router.navigate(['Home']);
-    }
+
+    // Set the success message
+    this.successMessage = 'User signed in successfully!';
+
+    // Wait for 10 seconds before navigating to the next page
+    setTimeout(async () => {
+      if (teamId) {
+        await this.router.navigate(['Team']);
+      } else {
+        await this.router.navigate(['Home']);
+      }
+    }, 10000);
+
     return this.updateUserData(result.user);
   }
+
 
   async SignUp(email: string, password: string, name: string, surname: string) {
     const result = await this.afAuth.createUserWithEmailAndPassword(email, password);
