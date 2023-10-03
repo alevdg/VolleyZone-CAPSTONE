@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   isAdmin = false;
+  showSignOutAlert = false;
 
   constructor(
     private authService: AuthService,
@@ -57,4 +58,14 @@ export class SidebarComponent {
     this.router.navigate(['/Home']);
   }
 
+  signOut() {
+    this.authService.SignOut().then(() => {
+      this.showSignOutAlert = true;
+
+      setTimeout(() => {
+        this.router.navigate(['Login']);
+      }, 2000);  // Wait for 2 seconds
+    });
+
+  }
 }

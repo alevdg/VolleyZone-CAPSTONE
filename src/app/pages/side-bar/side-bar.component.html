@@ -5,7 +5,7 @@
     width="50px"
     height="50px"
   />
-  <a class="navbar-brand" href="#">VOLLEYZONE</a>
+  <a class="navbar-brand" href="">VOLLEYZONE</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -52,7 +52,7 @@
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
-          href="#"
+          href=""
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
@@ -64,11 +64,11 @@
           <span class="badge badge-pill badge-success">3</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">One new friend request</a>
-          <a class="dropdown-item" href="#"
+          <a class="dropdown-item" href="">One new friend request</a>
+          <a class="dropdown-item" href=""
             >Upcoming Events: Volleyball Qualifiers</a
           >
-          <a class="dropdown-item" href="#">Yu Nishinoya likes your post</a>
+          <a class="dropdown-item" href="">Yu Nishinoya likes your post</a>
         </div>
       </li>
     </ul>
@@ -76,7 +76,7 @@
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
-          href="#"
+          href=""
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
@@ -93,7 +93,18 @@
           />
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Log out</a>
+          <a routerLink="/Profile" class="dropdown-item">My Profile</a>
+          <a routerLink="/Team" class="dropdown-item">My Team</a>
+          <a routerLink="/Message" class="dropdown-item">Messages</a>
+          <a class="dropdown-item" (click)="signOut()">Log out</a>
+
+          <div
+            *ngIf="showSignOutAlert"
+            class="alert alert-success"
+            role="alert"
+          >
+            User successfully signed out!
+          </div>
         </div>
       </li>
     </ul>
