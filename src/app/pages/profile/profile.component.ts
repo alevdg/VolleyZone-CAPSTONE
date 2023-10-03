@@ -14,6 +14,16 @@ export class ProfileComponent implements OnInit, OnDestroy {
   showPostAlert = false;
 
 
+  // static post
+  post4 = {
+    showComments: false,
+    comment: '',
+    savedComments: [['Keep you eyes open, you idiot. Looking forward to the next training.']],
+    liked: false,
+    username: 'Tobio Kageyama',
+    avatar: '../../../assets/img/kageyama.png'
+  };
+
   posts = [];
 
   private timeDifferenceInterval: any;

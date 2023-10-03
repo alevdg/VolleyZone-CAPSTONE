@@ -1,51 +1,44 @@
+$primary-color: #E49622;
+$primary-bg-color: #333;
+$white-color: white;
+
 .container {
   padding: 20px;
 }
 
-.card {
+.card,
+.experience,
+.education {
   margin-bottom: 20px;
-  background-color: #E49622;
+  background-color: $primary-color;
 }
 
-.card-body {
+.card-body,
+.card-img {
   text-align: start;
   color: black;
-}
-
-.card-img {
   width: 100%;
 }
 
-.skills p {
-  margin-bottom: 0;
-}
-
-.languages p {
-  margin-bottom: 0;
-}
-
-// Progress bar styles
+.skills p,
+.languages p,
 .progress {
+  margin-bottom: 0;
   height: 24px;
 }
 
 .progress-bar {
   font-weight: bold;
   line-height: 24px;
+  color: $white-color;
+  background-color: $primary-bg-color;
 }
 
-// // right column
-// .text-grey {
-//   color: grey;
-// }
-
-// .text-org {
-//   color: teal;
-// }
-
-.experience,
-.education {
-  margin-bottom: 20px;
+h5,
+.custom-title {
+  color: $primary-color;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .badge {
@@ -53,7 +46,6 @@
   padding: 3px 6px;
 }
 
-// post style
 .post-body,
 .post-text,
 .btn,
@@ -62,17 +54,28 @@
 }
 
 .btn-primary {
-  background-color: #E49622;
-  border-color: #E49622;
+  background-color: $primary-color;
+  border-color: $primary-color;
 }
 
-// left column style
-.profile-card {
-  .card-body {
-    background-color:#E49622;
-  
-  }
+.profile-card .card-body {
+  background-color: $primary-color;
 }
-.text-black{
+
+.text-black {
   text-align: center;
+}
+
+.nav-pills .nav-link {
+  justify-content: center;
+}
+
+.nav-link.active,
+.show > .nav-link {
+  color: $white-color;
+  background-color: $primary-bg-color;
+}
+
+.form-group {
+  margin-bottom: 2rem;  
 }

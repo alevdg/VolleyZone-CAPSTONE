@@ -28,59 +28,68 @@
           <p><i class="bi bi-envelope-fill p-2"></i>hinata@gmail.com</p>
           <p><i class="bi bi-phone-fill p-2"></i>1224435534</p>
           <hr />
-          <p class="font-weight-bold"><i class="bi bi-tools p-2"></i>Skills</p>
-          <p>Adobe Photoshop</p>
+          <!-- skills section -->
+          <h3
+            class="d-flex justify-content-between align-items-center font-weight-bold"
+          >
+            <span><i class="bi bi-tools p-2"></i>Skills</span>
+            <button class="btn btn-primary btn-icon bg-dark" type="button">
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+          </h3>
+          <p>Serve</p>
           <div class="progress mb-3">
             <div
               class="progress-bar bg-teal"
               role="progressbar"
-              style="width: 90%"
-              aria-valuenow="90"
+              style="width: 60%"
+              aria-valuenow="60"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              90%
+              60%
             </div>
           </div>
-          <p>Photography</p>
+          <p>Attack</p>
           <div class="progress mb-3">
             <div
               class="progress-bar bg-teal"
               role="progressbar"
-              style="width: 80%"
-              aria-valuenow="80"
+              style="width: 70%"
+              aria-valuenow="70"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              80%
+              70%
             </div>
           </div>
-          <p>Illustrator</p>
+          <p>Set</p>
           <div class="progress mb-3">
             <div
               class="progress-bar bg-teal"
               role="progressbar"
-              style="width: 75%"
-              aria-valuenow="75"
+              style="width: 55%"
+              aria-valuenow="55"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              75%
+              55%
             </div>
           </div>
-          <p>Media</p>
+          <p>Defense</p>
           <div class="progress mb-3">
             <div
               class="progress-bar bg-teal"
               role="progressbar"
-              style="width: 50%"
-              aria-valuenow="50"
+              style="width: 45%"
+              aria-valuenow="45"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              50%
+              45%
             </div>
           </div>
+          <!-- end skill section -->
           <br />
         </div>
       </div>
@@ -91,86 +100,216 @@
     <!-- Right Column -->
     <div class="col-md-8">
       <!-- pills Section -->
-      <div class="card">
-        <div class="card-header">
-          <ul class="nav nav-tabs justify-content-center" role="tablist">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                data-toggle="tab"
-                href="#home"
-                role="tab"
-              >
-                <i class="now-ui-icons objects_umbrella-13"></i> Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-                <i class="now-ui-icons shopping_cart-simple"></i> Profile
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
-                <i class="now-ui-icons shopping_shop"></i> Messages
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
-                <i class="now-ui-icons ui-2_settings-90"></i> Settings
-              </a>
-            </li>
-          </ul>
-        </div>
-
+      <div class="card bg-light">
         <div class="card-body">
-          <div class="tab-content text-center">
-            <div class="tab-pane active" id="home" role="tabpanel">
-              <p>
-                I think that’s a responsibility that I have, to push
-                possibilities, to show people, this is the level that things
-                could be at. So when you get something that has the name Kanye
-                West on it, it’s supposed to be pushing the furthest
-                possibilities. I will be the leader of a company that ends up
-                being worth billions of dollars, because I got the answers. I
-                understand culture. I am the nucleus.
-              </p>
-            </div>
-            <div class="tab-pane" id="profile" role="tabpanel">
-              <p>
-                I will be the leader of a company that ends up being worth
-                billions of dollars, because I got the answers. I understand
-                culture. I am the nucleus. I think that’s a responsibility that
-                I have, to push possibilities, to show people, this is the level
-                that things could be at. I think that’s a responsibility that I
-                have, to push possibilities, to show people, this is the level
-                that things could be at.
-              </p>
-            </div>
-            <div class="tab-pane" id="messages" role="tabpanel">
-              <p>
-                I think that’s a responsibility that I have, to push
-                possibilities, to show people, this is the level that things
-                could be at. So when you get something that has the name Kanye
-                West on it, it’s supposed to be pushing the furthest
-                possibilities. I will be the leader of a company that ends up
-                being worth billions of dollars, because I got the answers. I
-                understand culture. I am the nucleus.
-              </p>
-            </div>
-            <div class="tab-pane" id="settings" role="tabpanel">
-              <p>
-                "I will be the leader of a company that ends up being worth
-                billions of dollars, because I got the answers. I understand
-                culture. I am the nucleus. I think that’s a responsibility that
-                I have, to push possibilities, to show people, this is the level
-                that things could be at."
-              </p>
-            </div>
-          </div>
+          <!-- pills -->
+          <mdb-tabs [pills]="true" [justified]="true">
+            <!-- recent activities -->
+            <mdb-tab>
+              <ng-template mdbTabTitle>
+                <span class="custom-title"
+                  ><i class="bi bi-chart-pie"></i>Activity</span
+                >
+              </ng-template>
+              <ng-template mdbTabContent>
+                <div class="col-md-12">
+                  <h5 class="mt-2 mb-3 ml-2">
+                    <span class="bi bi-clock float-right"></span>
+                    Recent Activity
+                  </h5>
+                  <table class="table table-hover table-striped">
+                    <tbody>
+                      <tr>
+                        <td>Kei Tsukishima posted a new status</td>
+                      </tr>
+                      <tr>
+                        <td>Tobio Kageyama commented on your post</td>
+                      </tr>
+                      <tr>
+                        <td>You liked Yu Nishinoya's Post</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ng-template>
+            </mdb-tab>
+            <!-- messages -->
+            <mdb-tab>
+              <ng-template mdbTabTitle>
+                <span class="custom-title"
+                  ><i class="bi bi-chart-line"></i>Notification</span
+                >
+              </ng-template>
+
+              <ng-template mdbTabContent>
+                <div class="tab-pane" id="messages">
+                  <table class="table table-hover table-striped">
+                    <tbody>
+                      <tr>
+                        <td>You have one new friend request.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Upcoming Events: Volleyball Qualifiers. Find out more
+                          in this..
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Toru Oikawa just viewed your profile. Do you know this
+                          player?
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ng-template>
+            </mdb-tab>
+            <!-- edit -->
+            <mdb-tab>
+              <ng-template mdbTabTitle>
+                <span class="custom-title"><i class="bi bi-cogs"></i>Edit</span>
+              </ng-template>
+              <ng-template mdbTabContent>
+                <div class="tab-pane" id="edit">
+                  <form>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Name</label
+                      >
+                      <div class="col-lg-9">
+                        <input
+                          class="form-control"
+                          mdbInput
+                          type="text"
+                          mdbModel="first_name"
+                          value="Shoyo"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Surname</label
+                      >
+                      <div class="col-lg-9">
+                        <input
+                          class="form-control"
+                          mdbInput
+                          type="text"
+                          mdbModel="last_name"
+                          value="Hinata"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Email</label
+                      >
+                      <div class="col-lg-9">
+                        <input
+                          class="form-control"
+                          mdbInput
+                          type="email"
+                          mdbModel="email"
+                          value="hinata@gmail.com.com"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Change profile</label
+                      >
+                      <div class="col-lg-9">
+                        <input class="form-control" mdbInput type="file" />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Occupation</label
+                      >
+                      <div class="col-lg-9">
+                        <input
+                          class="form-control"
+                          mdbInput
+                          type="text"
+                          mdbModel="occupation"
+                          value="Student"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Team
+                      </label>
+                      <div class="col-lg-9">
+                        <input
+                          class="form-control"
+                          mdbInput
+                          type="text"
+                          mdbModel="team"
+                          value="Karazuno"
+                          placeholder="Team"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Password</label
+                      >
+                      <div class="col-lg-9">
+                        <input
+                          class="form-control"
+                          mdbInput
+                          type="password"
+                          mdbModel="password"
+                          value=""
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label"
+                        >Confirm password</label
+                      >
+                      <div class="col-lg-9">
+                        <input
+                          class="form-control"
+                          mdbInput
+                          type="password"
+                          mdbModel="confirm_password"
+                          value=""
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-3"></div>
+                      <div class="col-lg-9">
+                        <input
+                          type="reset"
+                          class="btn btn-secondary m-2"
+                          value="Cancel"
+                        />
+                        <input
+                          type="button"
+                          class="btn btn-primary m-2"
+                          value="Save Changes"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </ng-template>
+            </mdb-tab>
+          </mdb-tabs>
+
+          <!-- end pills section -->
         </div>
       </div>
-      <!-- end pills section -->
-
       <!-- post section -->
       <div class="card bg-light">
         <div class="card-body">
@@ -202,6 +341,120 @@
         </div>
       </div>
       <!-- end post section  -->
+      <!-- static post -->
+      <!--  post 4 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card rounded bg-white mb-3">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <img
+                  src="../../../assets/img/hinata.png"
+                  alt="Avatar"
+                  class="rounded-square mr-2"
+                  style="width: 50px"
+                />
+                <h4 class="card-title mb-0">Hinata Shoyo</h4>
+              </div>
+              <span class="text-muted">16 min</span>
+              <hr class="clearfix" />
+              <p class="card-text">
+                Had a great practice session today! I didn't close my eyes while
+                spiking today!
+              </p>
+              <button
+                type="button"
+                [ngClass]="post4.liked ? 'btn-success' : 'btn-primary'"
+                class="btn mb-2 mr-2"
+                (click)="post4.liked = !post4.liked"
+                style="transition: background-color 0.3s ease"
+              >
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                {{ post4.liked ? "You liked this post" : "Like" }}
+              </button>
+
+              <!-- start comment section -->
+              <button
+                type="button"
+                class="btn btn-secondary mb-2"
+                (click)="post4.showComments = !post4.showComments"
+              >
+                <i class="bi bi-chat-left-text-fill"></i> Comment
+              </button>
+
+              <div *ngIf="post4.showComments">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea"
+                    [(ngModel)]="post4.comment"
+                  ></textarea>
+                  <label for="floatingTextarea">Comments</label>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary m-2"
+                  (click)="saveComment(post4)"
+                >
+                  Submit
+                </button>
+              </div>
+              <!-- alert -->
+              <div
+                *ngIf="showCommentAlert"
+                class="alert alert-danger"
+                role="alert"
+                style="
+                  position: fixed;
+                  top: 0;
+                  right: 0;
+                  z-index: 3;
+                  margin: 10px;
+                "
+              >
+                Please enter a comment before submitting!
+              </div>
+
+              <!-- Display the saved comments -->
+              <div
+                *ngFor="let commentData of post4.savedComments"
+                class="card bg-light mb-3"
+              >
+                <div class="card-header">Comments</div>
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <img
+                      [src]="
+                        commentData.avatar ? commentData.avatar : post4.avatar
+                      "
+                      alt="Avatar"
+                      class="rounded-square mr-2"
+                      style="width: 40px"
+                    />
+                    <h5 class="card-text mb-0">
+                      {{
+                        commentData.username
+                          ? commentData.username
+                          : post4.username
+                      }}
+                    </h5>
+                  </div>
+                  <hr />
+                  <p class="card-text">
+                    {{
+                      commentData.comment ? commentData.comment : commentData
+                    }}
+                  </p>
+                </div>
+              </div>
+              <!-- end display saved comments -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end  post 4 -->
+      <!-- end static post -->
       <!-- generated posts section -->
       <div class="col-md-12">
         <div class="card rounded bg-white mb-3" *ngFor="let post of posts">
@@ -311,80 +564,14 @@
             <!-- end display saved comments -->
           </div>
         </div>
-      </div>
-      <!-- end post section  -->
+        <!-- end post section  -->
 
-      <!-- Work Experience Section -->
-      <div class="card bg-light">
-        <div class="card-body">
-          <h2 class="text-grey my-4">
-            <i class="fa fa-suitcase fa-fw me-3 fs-4 text-teal"></i>Work
-            Experience
-          </h2>
-          <div class="experience">
-            <h5><b>Front End Developer / w3schools.com</b></h5>
-            <p>
-              <i class="fa fa-calendar fa-fw me-2"></i>Jan 2015 -
-              <span class="badge bg-teal rounded">Current</span>
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in
-              deserunt aspernatur est reprehenderit sunt hic. Nulla tempora
-              soluta ea et odio, unde doloremque repellendus iure, iste.
-            </p>
-            <hr />
-          </div>
-          <div class="experience">
-            <h5><b>Web Developer / something.com</b></h5>
-            <p><i class="fa fa-calendar fa-fw me-2"></i>Mar 2012 - Dec 2014</p>
-            <p>
-              Consectetur adipisicing elit. Praesentium magnam consectetur vel
-              in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora
-              soluta ea et odio, unde doloremque repellendus iure, iste.
-            </p>
-            <hr />
-          </div>
-          <div class="experience">
-            <h5><b>Graphic Designer / designsomething.com</b></h5>
-            <p><i class="fa fa-calendar fa-fw me-2"></i>Jun 2010 - Mar 2012</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <br />
-          </div>
-        </div>
+        <!-- End Right Column -->
       </div>
 
-      <!-- Education Section -->
-      <div class="card bg-light mt-4">
-        <div class="card-body">
-          <h2 class="text-grey my-4">
-            <i class="fa fa-certificate fa-fw me-3 fs-4 text-teal"></i>Education
-          </h2>
-          <div class="education">
-            <h5><b>W3Schools.com</b></h5>
-            <p><i class="fa fa-calendar fa-fw me-2"></i>Forever</p>
-            <p>Web Development! All I need to know in one place</p>
-            <hr />
-          </div>
-          <div class="education">
-            <h5><b>London Business School</b></h5>
-            <p><i class="fa fa-calendar fa-fw me-2"></i>2013 - 2015</p>
-            <p>Master Degree</p>
-            <hr />
-          </div>
-          <div class="education">
-            <h5><b>School of Coding</b></h5>
-            <p><i class="fa fa-calendar fa-fw me-2"></i>2010 - 2013</p>
-            <p>Bachelor Degree</p>
-            <br />
-          </div>
-        </div>
-      </div>
-
-      <!-- End Right Column -->
+      <!-- end The Grid -->
     </div>
 
-    <!-- end The Grid -->
+    <!-- end  Page Container -->
   </div>
-
-  <!-- end  Page Container -->
 </div>

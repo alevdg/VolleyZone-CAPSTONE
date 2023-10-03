@@ -31,7 +31,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CreateTeamComponent } from './component/create-team/create-team.component';
 import { TeamListComponent } from './component/team-list/team-list.component';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
-import { SidebarComponent } from './pages/side-bar/side-bar.component';
 import { TeamDetailComponent } from './component/team-detail/team-detail.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { DatabaseService } from './shared/database.service';
@@ -41,7 +40,8 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { TeamService } from './shared/team.service';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
-
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { SidebarComponent } from './pages/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -55,9 +55,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     TeamPageComponent,
     TeamDetailComponent,
     AdminComponent,
-    SidebarComponent,
     FooterComponent,
     ProfileComponent,
+    SidebarComponent
 
   ],
   imports: [
@@ -77,6 +77,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     CarouselModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MdbTabsModule,
 
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
