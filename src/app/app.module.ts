@@ -37,10 +37,10 @@ import { AdminComponent } from './component/admin/admin.component';
 import { DatabaseService } from './shared/database.service';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { TeamService } from './shared/team.service';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -56,8 +56,8 @@ import { AuthGuard } from './shared/guard/auth.guard';
     TeamDetailComponent,
     AdminComponent,
     SidebarComponent,
-    HomeComponent,
     FooterComponent,
+    ProfileComponent,
 
   ],
   imports: [

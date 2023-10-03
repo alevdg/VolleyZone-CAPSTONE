@@ -1,0 +1,52 @@
+
+body {
+  padding: 20px;
+}
+.card {
+  margin-bottom: 20px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.skills p {
+  margin-bottom: 0;
+}
+
+.languages p {
+  margin-bottom: 0;
+}
+
+// Progress bar styles
+.progress {
+  height: 24px;
+}
+
+.progress-bar {
+  font-weight: bold;
+  line-height: 24px;
+}
+
+// right column
+.text-grey {
+  color: grey;
+}
+
+.text-org {
+  color: teal;
+}
+
+.experience,
+.education {
+  margin-bottom: 20px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 3px 6px;
+}

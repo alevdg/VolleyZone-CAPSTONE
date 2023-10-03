@@ -11,6 +11,8 @@ import { CreateTeamComponent } from './component/create-team/create-team.compone
 import { AuthGuard } from './shared/guard/auth.guard';
 import { FooterComponent } from './pages/footer/footer.component';
 import { SidebarComponent } from './pages/side-bar/side-bar.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
   { path: 'Login', component: SignInComponent },
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path: 'Manage', component: AdminComponent },
   { path: 'Footer', component: FooterComponent },
   { path: 'Nav', component: SidebarComponent },
-  { path: 'CreateTeam', component: CreateTeamComponent }
+  { path: 'CreateTeam', component: CreateTeamComponent },
+  { path: 'Profile', component: ProfileComponent }
 ];
 
 @NgModule({
