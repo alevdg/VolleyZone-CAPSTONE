@@ -132,6 +132,12 @@
           object-fit: cover; // This will crop the image to fit the square
          border-radius: 15px;
          
+          /* Adjust button size for smaller screens */
+          @media (max-width: 766px) {
+           width: 300px; // Adjust this to change the size of the image
+                   height: 300px; // Adjust this to change the size of the image
+          }
+
         }
       }
     }
