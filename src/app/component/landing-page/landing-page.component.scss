@@ -85,7 +85,6 @@
             border-radius: 20px;
             padding: 12px 30px;
             margin-top: 5px;
-            cursor: pointer;
             color: #000000;
             text-transform: uppercase;
             font-weight: 550;
@@ -127,8 +126,8 @@
       
         img {
           display: block;
-          width: 300px; // Adjust this to change the size of the image
-          height: 300px; // Adjust this to change the size of the image
+          width: 700px; // Adjust this to change the size of the image
+          height: 400px; // Adjust this to change the size of the image
           object-fit: cover; // This will crop the image to fit the square
          border-radius: 15px;
         }
