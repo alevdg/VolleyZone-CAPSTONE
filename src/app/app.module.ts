@@ -45,6 +45,7 @@ import { SidebarComponent } from './pages/side-bar/side-bar.component';
 import { NekomaTeamComponent } from './pages/nekoma-team/nekoma-team.component';
 import { AobaTeamComponent } from './pages/aoba-team/aoba-team.component';
 import { MessageComponent } from './component/message/message.component';
+import { EventComponent } from './pages/event/event.component';
 
 
 
@@ -65,7 +66,8 @@ import { MessageComponent } from './component/message/message.component';
     SidebarComponent,
     NekomaTeamComponent,
     AobaTeamComponent,
-    MessageComponent
+    MessageComponent,
+    EventComponent
 
   ],
   imports: [

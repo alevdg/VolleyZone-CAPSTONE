@@ -15,30 +15,31 @@ export class CreateTeamComponent implements OnInit {
     name: '',
     description: ''
   };
+  teamMembers = [];
 
   constructor(private databaseService: DatabaseService, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  createTeam(): void {
-    this.authService.getCurrentUser().pipe(take(1)).subscribe(user => {
-      if (user) {
-        const adminId = user.uid;
-        this.team.admin = adminId;
+  // createTeam(): void {
+  //   this.authService.getCurrentUser().pipe(take(1)).subscribe(user => {
+  //     if (user) {
+  //       const adminId = user.uid;
+  //       this.team.admin = adminId;
 
-        this.databaseService.createTeam(this.team)
-          .then(() => {
-            console.log('Team created with ID: ', this.team.id);
-            this.team = {
-              name: '',
-              description: ''
-            }; // Clear the form after creating the team
-          })
-          .catch(error => {
-            console.error('Error creating team:', error);
-          });
-      }
-    });
-  }
+  //       this.databaseService.createTeam(this.team)
+  //         .then(() => {
+  //           console.log('Team created with ID: ', this.team.id);
+  //           this.team = {
+  //             name: '',
+  //             description: ''
+  //           }; // Clear the form after creating the team
+  //         })
+  //         .catch(error => {
+  //           console.error('Error creating team:', error);
+  //         });
+  //     }
+  //   });
+  // }
 }

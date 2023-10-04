@@ -1,1 +1,192 @@
-<p>aoba-team works!</p>
+<app-sidebar></app-sidebar>
+
+<div class="container">
+  <div id="content" class="content p-4">
+    <div class="profile-header">
+      <div class="profile-header-cover"></div>
+      <div class="profile-header-content bg-dark">
+        <div class="profile-header-img mb-4">
+          <img src="../../../assets/img/josai.png" class="mb-4" alt="Avatar" />
+        </div>
+
+        <div class="profile-header-info">
+          <h4 class="m-t-sm">Aoba Johsai High</h4>
+          <p class="m-b-sm">Miyagi Prefecture</p>
+          <button
+            [ngClass]="requestSent['1'] ? 'btn-warning' : 'btn-success'"
+            class="btn btn-block"
+            (click)="sendRequest('1')"
+            style="transition: background-color 0.3s ease"
+            title="Send Friend Request"
+          >
+            <i class="bi bi-person-plus"></i>
+            {{ requestSent["1"] ? "Pending Request" : "Apply to this team" }}
+          </button>
+        </div>
+      </div>
+
+      <ul class="profile-header-tab nav nav-tabs">
+        <li class="nav-item" (click)="openNavAlert('FEED')">
+          <p class="nav-link">FEED</p>
+        </li>
+        <li class="nav-item" (click)="openNavAlert('MANAGE')">
+          <p class="nav-link">MANAGE</p>
+        </li>
+        <li class="nav-item" (click)="openNavAlert('PHOTOS')">
+          <p class="nav-link">PHOTOS</p>
+        </li>
+        <li class="nav-item" (click)="openNavAlert('VIDEOS')">
+          <p class="nav-link">VIDEOS</p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link active show">TEAM</p>
+        </li>
+      </ul>
+    </div>
+    <!-- alert -->
+    <div
+      *ngIf="showNavAlert"
+      class="alert alert-info"
+      role="alert"
+      style="position: fixed; top: 0; right: 0; z-index: 3; margin: 10px"
+    >
+      WIP! It will be released on the next update.
+    </div>
+    <!-- alert  -->
+    <div class="profile-container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="tab-content">
+            <div class="tab-pane fade active show" id="profile-friends">
+              <div class="m-2"><b>TEAM LIST</b></div>
+
+              <ul class="friend-list clearfix">
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/oikawa.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Toru Oikawa</h4>
+                      <p>Setter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/Hajime.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Hajime Iwaizumi</h4>
+                      <p>Outside Hitter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/Issei.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Issei Matsukawa</h4>
+                      <p>Middle Blocker</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img
+                        src="../../../assets/img/Takahiro.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Takahiro Hanamaki</h4>
+                      <p>Outside Hitter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/Shigeru.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Shigeru Yahaba</h4>
+                      <p>Setter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/Shinji.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Shinji Watari</h4>
+                      <p>Libero</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img
+                        src="../../../assets/img/Kindaichi.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Yutaro Kindaichi</h4>
+                      <p>Middle Blocker</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- colonna destra -->
+        <div class="col-md-4 hidden-xs hidden-sm">
+          <ul class="profile-info-list">
+            <li class="title">TEAM INFORMATION</li>
+            <li>
+              <div class="field">Location:</div>
+              <div class="value">Miyagi Prefecture</div>
+            </li>
+            <li>
+              <div class="field">Manager:</div>
+              <div class="value">N/A</div>
+            </li>
+            <li>
+              <div class="field">Coach:</div>
+              <div class="value">Nobuteru Irihata Sadayuki Mizoguchi</div>
+            </li>
+            <li>
+              <div class="field">Nationality:</div>
+              <div class="value">Japan</div>
+            </li>
+            <li>
+              <div class="field">Address:</div>
+              <div class="value">
+                <address class="m-b-0">
+                  Nekoma High.<br />
+                  1355 Neko Street<br />
+                  Nerima, NW 0451
+                </address>
+              </div>
+            </li>
+            <li>
+              <div class="field">Phone No.:</div>
+              <div class="value">(123) 456-7890</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

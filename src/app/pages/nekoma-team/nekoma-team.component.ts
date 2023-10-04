@@ -16,13 +16,7 @@ export class NekomaTeamComponent {
   constructor(private firestore: AngularFirestore) { }
   requestSent = {};
 
-  confirmLeave() {
-    if (window.confirm("Are you sure you want to leave the team?")) {
-      // User clicked OK, add the logic for leaving the team here.
-    } else {
-      // User clicked Cancel, do nothing.
-    }
-  }
+
 
   sendRequest(id: string) {
     this.requestSent[id] = true;
