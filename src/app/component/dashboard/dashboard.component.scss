@@ -1,6 +1,6 @@
 .container {
   max-width: 1400px;
-  margin-top: 80px;
+  margin-top: 20px;
 }
 // left column style
 .profile-card {
@@ -11,18 +11,20 @@
 }
 
 .row {
+  cursor: pointer;
   .col-md-3 {
     .card {
       &.rounded, &.white {
         .card-body {
           h4.card-title {
             text-align: center;
-            cursor: pointer;
+         
           }
           p.text-center {
             img.rounded-circle {
               height: 106px;
               width: 106px;
+              
             }
           }
           hr {
@@ -83,6 +85,7 @@
   // post - style
   .card-body.bg-light { 
     color: #E49622; 
+    cursor: pointer;
   
     h6 {
       color: #E49622 ;
@@ -117,7 +120,8 @@
   
     .card-body {
       .card-text {
-        margin-bottom: 0; // Remove bottom margin
+        margin-bottom: 0; 
+        cursor: pointer;
       }
     }
   }

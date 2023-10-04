@@ -32,6 +32,7 @@ body {
 
 .profile-info-list > li .value {
   color: #333;
+  
 }
 
 .profile-info-list > li.img-list a {
@@ -91,13 +92,19 @@ body .fc-icon {
 }
 
 .profile-header .profile-header-tab {
-  background: #fff;
+  background: #E49622;
   list-style-type: none;
   margin: -1.25rem 0 0;
   padding: 0 0 0 8.75rem;
   border-bottom: 1px solid #c8c7cc;
   white-space: nowrap;
+  cursor: pointer;
 }
+
+.profile-header .profile-header-tab .nav-item .nav-link:hover {
+  background: linear-gradient(to right, #FF3C5F, #E49622);
+}
+
 
 .profile-header .profile-header-tab > li {
   display: inline-block;

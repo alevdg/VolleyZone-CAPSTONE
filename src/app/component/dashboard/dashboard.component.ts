@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../shared/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +19,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
   requestAccepted = false;
   requestDeclined = false;
   requestFriendSent = {};
+  posts = [];
+  comments = [];
+
+  @HostListener('window:beforeunload', ['$event'])
+  clearLocalStorage(event) {
+    localStorage.clear();
+  }
 
   // Static posts
   post1 = {
@@ -58,7 +66,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
 
   // Array for user generated posts
-  posts = [];
+
 
   private timeDifferenceInterval: any;
   private subscription: Subscription;
@@ -68,11 +76,21 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.authService.getCurrentUser().subscribe(user => {
       if (user) {
-        // // Get the user ID
-        // const userId = user.uid;
-        // console.log('User ID:', userId);
+        // Get the user ID
+        const userId = user.uid;
+        console.log('User ID:', userId);
+
+        // Load posts from localStorage
+        let storedPosts = localStorage.getItem('posts');
+        this.posts = storedPosts ? JSON.parse(storedPosts) : [];
+
+        // Load comments from localStorage
+        let storedComments = localStorage.getItem('comments');
+        this.comments = storedComments ? JSON.parse(storedComments) : [];
       }
     });
+
+
 
     // Update time difference every minute
     this.timeDifferenceInterval = setInterval(() => {

@@ -24,7 +24,9 @@
       position: relative;
       cursor: pointer;
     }
-
+    .dropdown-item:hover ~ .nav-link .badge {
+      display: none;
+    }
     .badge {
       background-color: #E49622;
       position: absolute;

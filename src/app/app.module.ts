@@ -47,6 +47,7 @@ import { AobaTeamComponent } from './pages/aoba-team/aoba-team.component';
 import { MessageComponent } from './component/message/message.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

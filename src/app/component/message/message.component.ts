@@ -11,15 +11,16 @@ export class MessageComponent implements OnInit {
   newMessage: string = '';
 
   ngOnInit() {
-    let storedMessages = localStorage.getItem('messages');
+    let storedMessages = sessionStorage.getItem('messages');
     this.messages = storedMessages ? JSON.parse(storedMessages) : [];
   }
 
   sendMessage() {
     this.messages.push(this.newMessage);
-    localStorage.setItem('messages', JSON.stringify(this.messages));
+    sessionStorage.setItem('messages', JSON.stringify(this.messages));
     this.newMessage = '';
   }
+
 
   getCurrentTime() {
     const now = new Date();

@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./team-page.component.scss'],
 })
 export class TeamPageComponent {
-
+  showNavAlert = false;
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -21,5 +21,10 @@ export class TeamPageComponent {
     } else {
       // User clicked Cancel, do nothing.
     }
+  }
+
+  openNavAlert(tabName: string) {
+    this.showNavAlert = true;
+    setTimeout(() => this.showNavAlert = false, 5000);  // Alert will disappear after 5 seconds
   }
 }

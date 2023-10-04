@@ -23,24 +23,33 @@
       </div>
 
       <ul class="profile-header-tab nav nav-tabs">
-        <li class="nav-item">
-          <p class="nav-link" data-toggle="tab">POSTS</p>
+        <li class="nav-item" (click)="openNavAlert('FEED')">
+          <p class="nav-link">FEED</p>
+        </li>
+        <li class="nav-item" (click)="openNavAlert('MANAGE')">
+          <p class="nav-link">MANAGE</p>
+        </li>
+        <li class="nav-item" (click)="openNavAlert('PHOTOS')">
+          <p class="nav-link">PHOTOS</p>
+        </li>
+        <li class="nav-item" (click)="openNavAlert('VIDEOS')">
+          <p class="nav-link">VIDEOS</p>
         </li>
         <li class="nav-item">
-          <p class="nav-link" data-toggle="tab">ABOUT</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link" data-toggle="tab">PHOTOS</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link" data-toggle="tab">VIDEOS</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link active show" data-toggle="tab">TEAM</p>
+          <p class="nav-link active show">TEAM</p>
         </li>
       </ul>
     </div>
-
+    <!-- alert -->
+    <div
+      *ngIf="showNavAlert"
+      class="alert alert-info"
+      role="alert"
+      style="position: fixed; top: 0; right: 0; z-index: 3; margin: 10px"
+    >
+      WIP! It will be released on the next update.
+    </div>
+    <!-- alert  -->
     <div class="profile-container">
       <div class="row">
         <div class="col-md-8">
@@ -171,7 +180,7 @@
             </li>
             <li>
               <div class="field">Manager:</div>
-              <div class="value">CKiyoko Shimizu, Hitoka Yachi</div>
+              <div class="value">Kiyoko Shimizu, Hitoka Yachi</div>
             </li>
             <li>
               <div class="field">Coach:</div>
