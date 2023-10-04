@@ -12,6 +12,9 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { FooterComponent } from './pages/footer/footer.component';
 import { SidebarComponent } from './pages/side-bar/side-bar.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { NekomaTeamComponent } from './pages/nekoma-team/nekoma-team.component';
+import { AobaTeamComponent } from './pages/aoba-team/aoba-team.component';
+import { MessageComponent } from './component/message/message.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
@@ -23,7 +26,10 @@ const routes: Routes = [
   { path: 'Footer', component: FooterComponent },
   { path: 'Nav', component: SidebarComponent },
   { path: 'CreateTeam', component: CreateTeamComponent },
-  { path: 'Profile', component: ProfileComponent }
+  { path: 'Profile', component: ProfileComponent },
+  { path: 'Message', component: MessageComponent },
+  { path: 'NekomaTeam', component: NekomaTeamComponent },
+  { path: 'AobaTeam', component: AobaTeamComponent },
 ];
 
 @NgModule({

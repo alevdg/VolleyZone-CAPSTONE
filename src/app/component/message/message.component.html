@@ -1,0 +1,159 @@
+<app-sidebar></app-sidebar>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-lg-12 bg-dark" style="border-radius: 10px">
+      <div class="card chat-app bg-dark">
+        <div id="plist" class="people-list">
+          <div class="input-group">
+            <div class="input-group-prepend"></div>
+            <input type="text" class="form-control" placeholder="Search..." />
+            <button class="input-group-text">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+          <ul class="list-unstyled chat-list mt-2 mb-0">
+            <li class="clearfix">
+              <img src="../../../assets/img/tanaka.png" alt="avatar" />
+              <div class="about">
+                <div class="name">Ryu Tanaka</div>
+                <div class="status">
+                  <i class="bi bi-circle-fill offline"></i> left 7 mins ago
+                </div>
+              </div>
+            </li>
+            <li class="clearfix active">
+              <img src="../../../assets/img/kageyama.png" alt="avatar" />
+              <div class="about">
+                <div class="name">Tobio Kageyama</div>
+                <div class="status">
+                  <i class="bi bi-circle-fill online"></i> online
+                </div>
+              </div>
+            </li>
+            <li class="clearfix">
+              <img src="../../../assets/img/nishinoya.png" alt="avatar" />
+              <div class="about">
+                <div class="name">Yu Nishinoya</div>
+                <div class="status">
+                  <i class="bi bi-circle-fill online"></i> online
+                </div>
+              </div>
+            </li>
+            <li class="clearfix">
+              <img src="../../../assets/img/asahi.png" alt="avatar" />
+              <div class="about">
+                <div class="name">Asahi Azumane</div>
+                <div class="status">
+                  <i class="bi bi-circle-fill offline"></i> left 10 hours ago
+                </div>
+              </div>
+            </li>
+            <li class="clearfix">
+              <img src="../../../assets/img/sugawara.png" alt="avatar" />
+              <div class="about">
+                <div class="name">Koshi Sugawara</div>
+                <div class="status">
+                  <i class="bi bi-circle-fill online"></i> online
+                </div>
+              </div>
+            </li>
+            <li class="clearfix">
+              <img src="../../../assets/img/daichi.png" alt="avatar" />
+              <div class="about">
+                <div class="name">Daichi Sawamura</div>
+                <div class="status">
+                  <i class="bi bi-circle-fill offline"></i> offline since Oct 2
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="chat">
+          <div class="chat-header clearfix">
+            <div class="row">
+              <div class="col-lg-6">
+                <a data-toggle="modal" data-target="#view_info">
+                  <img src="../../../assets/img/kageyama.png" alt="avatar" />
+                </a>
+                <div class="chat-about">
+                  <h6 class="m-b-0">Tobio Kageyama</h6>
+                  <small>Last seen: 2 hours ago</small>
+                </div>
+              </div>
+              <div class="col-lg-6 hidden-sm text-right">
+                <a class="btn btn-outline-secondary"
+                  ><i class="bi bi-camera-fill"></i
+                ></a>
+                <a class="btn btn-outline-primary"
+                  ><i class="bi bi-image-fill"></i
+                ></a>
+                <a class="btn btn-outline-info"
+                  ><i class="bi bi-camera-video-fill"></i
+                ></a>
+                <a class="btn btn-outline-warning"
+                  ><i class="bi bi-question"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="chat-history">
+            <ul class="m-b-0">
+              <li class="clearfix">
+                <div class="message-data text-right">
+                  <span class="message-data-time">10:10 AM, Today</span>
+                  <img src="../../../assets/img/hinata.png" alt="avatar" />
+                </div>
+                <div class="message other-message float-right">
+                  Hi Kageyama-kun, how are you? Do you want to some pepper
+                  drills with me?
+                </div>
+              </li>
+              <li class="clearfix">
+                <div class="message-data">
+                  <span class="message-data-time">10:12 AM, Today</span>
+                </div>
+                <div class="message my-message">
+                  Sure, I'll see you during lunch break.
+                </div>
+              </li>
+              <li class="clearfix">
+                <div class="message-data">
+                  <span class="message-data-time">10:15 AM, Today</span>
+                </div>
+                <div class="message my-message">
+                  We have a training match this saturday, we have to be careful.
+                </div>
+              </li>
+              <li class="clearfix" *ngFor="let message of messages">
+                <div class="message-data text-right">
+                  <span class="message-data-time m-2"
+                    >{{ getCurrentTime() }},Today</span
+                  >
+                  <img src="../../../assets/img/hinata.png" alt="avatar" />
+                </div>
+                <div class="message other-message float-right">
+                  {{ message }}
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="chat-message clearfix">
+            <div class="input-group mb-0">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter text here..."
+                [(ngModel)]="newMessage"
+              />
+              <div class="input-group-prepend">
+                <button class="input-group-text" (click)="sendMessage()">
+                  <i class="bi bi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

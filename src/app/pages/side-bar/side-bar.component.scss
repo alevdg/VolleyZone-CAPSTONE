@@ -2,6 +2,7 @@
   background-color: #343a40;
   color: white;
   padding:10px;
+  cursor: pointer;
 
 
   .navbar-brand {
@@ -21,6 +22,7 @@
       color: #E49622;
       font-size: 30px;
       position: relative;
+      cursor: pointer;
     }
 
     .badge {
@@ -32,6 +34,7 @@
 
     .li {
       list-style-type: none;
+      cursor: pointer;
     }
 
   }
@@ -42,6 +45,7 @@
     .dropdown-item:hover {
       background-color: #E49622;
       color: white;
+      cursor: pointer;
     }
   }
 

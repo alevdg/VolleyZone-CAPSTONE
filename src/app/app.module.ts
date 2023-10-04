@@ -42,6 +42,10 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { SidebarComponent } from './pages/side-bar/side-bar.component';
+import { NekomaTeamComponent } from './pages/nekoma-team/nekoma-team.component';
+import { AobaTeamComponent } from './pages/aoba-team/aoba-team.component';
+import { MessageComponent } from './component/message/message.component';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +61,10 @@ import { SidebarComponent } from './pages/side-bar/side-bar.component';
     AdminComponent,
     FooterComponent,
     ProfileComponent,
-    SidebarComponent
+    SidebarComponent,
+    NekomaTeamComponent,
+    AobaTeamComponent,
+    MessageComponent
 
   ],
   imports: [

@@ -1,60 +1,201 @@
 <app-sidebar></app-sidebar>
 
-<div class="container py-5 text-center" id="team">
-  <h1>KARASUNO</h1>
-  <p>Meet the team - our players:</p>
-  <br />
-  <div class="col">
-    <button class="btn btn-danger btn-block" title="Decline">
-      <i class="bi bi-x-lg"></i> Leave Team
-    </button>
-  </div>
-  <br />
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-6">
-      <div class="row">
-        <div class="col-md-6">
+<div class="container">
+  <div id="content" class="content p-4">
+    <div class="profile-header">
+      <div class="profile-header-cover"></div>
+      <div class="profile-header-content bg-dark">
+        <div class="profile-header-img mb-4">
           <img
-            src="../../../assets/img/kageyama.png"
-            alt="Kageyama"
-            class="rounded-circle team-img img-fluid w3-hover-opacity"
+            src="../../../assets/img/karasuno.png"
+            class="mb-4"
+            alt="Avatar"
           />
-          <h3>Tobio Kageyama</h3>
-          <p>Setter</p>
         </div>
 
-        <div class="col-md-6">
-          <img
-            src="../../../assets/img/hinata.png"
-            alt="Hinata"
-            class="rounded-circle team-img img-fluid w3-hover-opacity"
-          />
-          <h3>Shoyo Hinata</h3>
-          <p>Middle Blocker</p>
+        <div class="profile-header-info">
+          <h4 class="m-t-sm">Karasuno High</h4>
+          <p class="m-b-sm">Miyagi Prefecture</p>
+          <button class="btn btn-xs btn-danger mb-2" (click)="confirmLeave()">
+            Leave team
+          </button>
         </div>
       </div>
-    </div>
-    <br />
-    <div class="col-md-6">
-      <div class="row">
-        <div class="col-md-6">
-          <img
-            src="../../../assets/img/tsukki.png"
-            alt="Tsukishima"
-            class="rounded-circle team-img img-fluid w3-hover-opacity"
-          />
-          <h3>Kei Tsukishima</h3>
-          <p>Middle Blocker</p>
-        </div>
 
-        <div class="col-md-6">
-          <img
-            src="../../../assets/img/nishinoya.png"
-            alt="Nishinoya"
-            class="rounded-circle team-img img-fluid w3-hover-opacity"
-          />
-          <h3>Yu Nishinoya</h3>
-          <p>Libero</p>
+      <ul class="profile-header-tab nav nav-tabs">
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab">POSTS</p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab">ABOUT</p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab">PHOTOS</p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link" data-toggle="tab">VIDEOS</p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link active show" data-toggle="tab">TEAM</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="profile-container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="tab-content">
+            <div class="tab-pane fade active show" id="profile-friends">
+              <div class="m-2"><b>TEAM LIST</b></div>
+
+              <ul class="friend-list clearfix">
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img
+                        src="../../../assets/img/kageyama.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Tobio Kageyama</h4>
+                      <p>Setter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/hinata.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Shoyo Hinata</h4>
+                      <p>Middle Blocker</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/tsukki.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Kei Tsukishima</h4>
+                      <p>Middle Blocker</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img
+                        src="../../../assets/img/nishinoya.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Yu Nishinoya</h4>
+                      <p>Libero</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/daichi.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Daichi Sawamura</h4>
+                      <p>Outside Hitter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/asahi.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Asahi Azumane</h4>
+                      <p>Outside Hitter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img
+                        src="../../../assets/img/sugawara.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Koshi Sugawara</h4>
+                      <p>Setter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/tanaka.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Ryunosuke Tanaka</h4>
+                      <p>Opposite Hitter</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="friend-img">
+                      <img src="../../../assets/img/narita.png" alt="Avatar" />
+                    </div>
+                    <div class="friend-info">
+                      <h4>Kazuhito Narita</h4>
+                      <p>Middle Blocker</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- colonna destra -->
+        <div class="col-md-4 hidden-xs hidden-sm">
+          <ul class="profile-info-list">
+            <li class="title">TEAM INFORMATION</li>
+            <li>
+              <div class="field">Location:</div>
+              <div class="value">Miyagi Prefecture</div>
+            </li>
+            <li>
+              <div class="field">Manager:</div>
+              <div class="value">CKiyoko Shimizu, Hitoka Yachi</div>
+            </li>
+            <li>
+              <div class="field">Coach:</div>
+              <div class="value">Keishin Ukai</div>
+            </li>
+            <li>
+              <div class="field">Nationality:</div>
+              <div class="value">Japan</div>
+            </li>
+            <li>
+              <div class="field">Address:</div>
+              <div class="value">
+                <address class="m-b-0">
+                  Karasuno High.<br />
+                  1355 Neko Street<br />
+                  Miyagi, MY 2903
+                </address>
+              </div>
+            </li>
+            <li>
+              <div class="field">Phone No.:</div>
+              <div class="value">(123) 456-7890</div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

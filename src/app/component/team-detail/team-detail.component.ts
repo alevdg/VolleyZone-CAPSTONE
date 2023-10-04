@@ -9,49 +9,52 @@ import { iTeam } from '../../shared/teams';
   templateUrl: './team-detail.component.html',
   styleUrls: ['./team-detail.component.scss']
 })
-export class TeamDetailComponent implements OnInit {
+export class TeamDetailComponent {
   teamId: string;
   team: iTeam | undefined;
   isPending: boolean = false;
 
-  constructor(
-    private route: ActivatedRoute,
-    private teamService: TeamService
-  ) { }
+  // in progress
 
-  ngOnInit() {
-    this.teamId = this.route.snapshot.paramMap.get('id');
-    this.getTeamDetail();
-    this.checkPendingState();
-  }
+  // implements OnInit
+  // constructor(
+  //   private route: ActivatedRoute,
+  //   private teamService: TeamService
+  // ) { }
 
-  getTeamDetail() {
-    this.teamService
-      .getTeamById(this.teamId)
-      .subscribe(team => (this.team = team));
-  }
+  // ngOnInit() {
+  //   this.teamId = this.route.snapshot.paramMap.get('id');
+  //   this.getTeamDetail();
+  //   this.checkPendingState();
+  // }
 
-  checkPendingState() {
-    this.teamService
-      .getTeamsWithPendingState()
-      .subscribe(teams => {
-        const teamsWithPending = teams.filter(team =>
-          team.joinRequests.some(request =>
-            request.userId === this.teamId && request.status === 'pending'
-          )
-        );
-        this.isPending = teamsWithPending.length > 0;
-      });
-  }
+  // getTeamDetail() {
+  //   this.teamService
+  //     .getTeamById(this.teamId)
+  //     .subscribe(team => (this.team = team));
+  // }
 
-  sendJoinRequest() {
-    this.teamService.sendJoinRequest(this.teamId)
-      .then(() => {
-        console.log('Join request sent');
-        this.isPending = true;
-      })
-      .catch(error => {
-        console.log('Error sending join request:', error);
-      });
-  }
+  // checkPendingState() {
+  //   this.teamService
+  //     .getTeamsWithPendingState()
+  //     .subscribe(teams => {
+  //       const teamsWithPending = teams.filter(team =>
+  //         team.joinRequests.some(request =>
+  //           request.userId === this.teamId && request.status === 'pending'
+  //         )
+  //       );
+  //       this.isPending = teamsWithPending.length > 0;
+  //     });
+  // }
+
+  // sendJoinRequest() {
+  //   this.teamService.sendJoinRequest(this.teamId)
+  //     .then(() => {
+  //       console.log('Join request sent');
+  //       this.isPending = true;
+  //     })
+  //     .catch(error => {
+  //       console.log('Error sending join request:', error);
+  //     });
+  // }
 }

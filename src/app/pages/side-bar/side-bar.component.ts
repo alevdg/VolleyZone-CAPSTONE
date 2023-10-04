@@ -19,44 +19,6 @@ export class SidebarComponent {
     private router: Router
   ) { }
 
-  openNav() {
-    // Your code here to open the navigation
-    console.log('Navigation opened');
-  }
-
-  onLogoClick() {
-    // Your code here for when the logo is clicked
-    console.log('Logo clicked');
-  }
-
-  onNewsClick() {
-    // Your code here for when the News item is clicked
-    console.log('News clicked');
-  }
-
-  onAccountSettingsClick() {
-    // Your code here for when the Account Settings item is clicked
-    console.log('Account Settings clicked');
-  }
-
-  onMessagesClick() {
-    // Your code here for when the Messages item is clicked
-    console.log('Messages clicked');
-  }
-
-  onNotificationsClick() {
-    // Your code here for when the Notifications item is clicked
-    console.log('Notifications clicked');
-  }
-
-  onAvatarClick() {
-    // Your code here for when the Avatar is clicked
-    console.log('Avatar clicked');
-  }
-
-  redirectToHomePage() {
-    this.router.navigate(['/Home']);
-  }
 
   signOut() {
     this.authService.SignOut().then(() => {

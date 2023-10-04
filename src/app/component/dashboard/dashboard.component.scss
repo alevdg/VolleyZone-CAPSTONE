@@ -6,7 +6,7 @@
 .profile-card {
   .card-body {
     background-color:#E49622;
-    
+    cursor: pointer;
   }
 }
 
@@ -17,6 +17,7 @@
         .card-body {
           h4.card-title {
             text-align: center;
+            cursor: pointer;
           }
           p.text-center {
             img.rounded-circle {
@@ -40,11 +41,13 @@
           i.bi-microsoft-teams, i.bi-calendar-check-fill, i.bi-images {
             margin-right: 0.25rem;
             color: #E49622;
+            cursor: pointer;
           }
         }
         .collapse {
           p {
             margin-bottom: 1rem;
+            cursor: pointer;
           }
         }
         .row {
