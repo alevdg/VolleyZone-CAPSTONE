@@ -18,7 +18,7 @@
   <p align="center">
     Capstone Project: VolleyZone is a social platform for volleyball players and enthusiasts ✨ 
     <br>
-    Developed with Angular, Bootstrap, and Firebase.
+    Developed with Angular, Bootstrap and Firebase.
     <br />
    
   </p>
