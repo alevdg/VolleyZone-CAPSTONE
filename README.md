@@ -13,7 +13,7 @@
 
   </a>
 
-<h3 align="center">Volleyzone</h3>
+<h3 align="center">VolleyZone</h3>
 
   <p align="center">
     Capstone Project: VolleyZone is a social platform for volleyball players and enthusiast ✨ 
