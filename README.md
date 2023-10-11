@@ -16,9 +16,9 @@
 <h3 align="center">Volleyzone</h3>
 
   <p align="center">
-    Captsone Project: VolleyZone is social platform for volleyball players and enthusiast ✨ 
+    Capstone Project: VolleyZone is a social platform for volleyball players and enthusiast ✨ 
     <br>
-    Developed with Angular,Bootstrap and Firebase.
+    Developed with Angular, Bootstrap, and Firebase.
     <br />
    
   </p>
