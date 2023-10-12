@@ -82,6 +82,21 @@ Use this account:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Upcoming Features
+
+* [x] Registration for new users/players is working with the database. WIP to be implemented with the login
+* [ ] Log in with your own account and customize your profile
+* [ ] Share your photos and videos of your volleyball moments
+* [ ] Emoji reactions on posts or comments
+* [ ] Explore a new Team Page where you can see your team’s feed, manage your roster, and upload photos and videos of your matches
+* [ ] Access the Team Admin Portal where you can control the players’ roles, permissions, and attendance
+* [ ] Add, or remove friends in your network
+* [ ] Create a team, request to join or leave 
+* [ ] Plan your training sessions with the team calendar system
+* [ ] Challenge other teams to a friendly match and show off your skills
+* [ ] Updated Chat UI
+
+
 ### Clone the repo
 
 ```shell
