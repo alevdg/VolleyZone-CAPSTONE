@@ -20,8 +20,8 @@ import { EventComponent } from './pages/event/event.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
-  { path: 'Login', component: SignInComponent, canActivate: [AuthGuard] },
-  { path: 'Register', component: SignUpComponent, canActivate: [AuthGuard] },
+  { path: 'Login', component: SignInComponent },
+  { path: 'Register', component: SignUpComponent },
   { path: 'Home', component: DashboardComponent },
   { path: 'Team', component: TeamPageComponent },
   { path: 'Manage', component: AdminComponent },

@@ -48,7 +48,7 @@ export class AuthService {
       } else {
         await this.router.navigate(['Home']);
       }
-    }, 10000);
+    }, 3000);
 
     return this.updateUserData(result.user);
   }
