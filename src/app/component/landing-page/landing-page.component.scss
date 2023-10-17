@@ -1,9 +1,11 @@
-/* Start Landing Page */
+/* Inizio Pagina di atterraggio */
 .landing-page {
+  /* Intestazione della pagina */
   header {
     min-height: 100px;
     display: flex;
 
+    /* Adattamento per schermi più piccoli */
     @media (max-width: 767px) {
       min-height: auto;
       display: initial;
@@ -13,17 +15,20 @@
       display: flex;
       align-items: center;
 
+      /* Adattamento per schermi più piccoli */
       @media (max-width: 767px) {
         flex-direction: row;
         justify-content: center;
       }
 
+      /* Stile del logo */
       .logo {
         color: #E49622;
         font-style: italic;
         text-transform: uppercase;
         font-size:40px;
 
+        /* Adattamento per schermi più piccoli */
         @media (max-width: 767px) {
           margin-top: 20px;
           margin-bottom: 20px;
@@ -32,6 +37,7 @@
     }
   }
 
+  /* Contenuto della pagina */
   .content {
     .container {
       display: flex;
@@ -40,6 +46,7 @@
       gap: 40px;
       min-height: calc(90vh - 80px);
 
+      /* Adattamento per schermi più piccoli */
       @media (max-width: 767px) {
         gap: 0;
         min-height: calc(100vh - 101px);
@@ -47,25 +54,31 @@
         flex-direction: column-reverse;
       }
 
+      /* Informazioni sulla pagina */
       .info {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
 
+        /* Adattamento per schermi più piccoli */
         @media (max-width: 767px) {
           text-align: center;
           margin-bottom: 15px;
           align-items: center;
         }
 
+        /* Stile del titolo */
         h1 {
           color: #E49622;
           font-size: 50px;
 
+          /* Adattamento per schermi più piccoli */
           @media (max-width: 600px) {
-            font-size: 32px; /* Adjust this value as needed */
+            font-size: 32px; 
+          }
         }
-      }
+
+        /* Stile del paragrafo */
         p {
           margin: 0;
           line-height: 1.6;
@@ -74,6 +87,7 @@
           font-weight:400px ;
         }
 
+        /* Stile dei pulsanti */
         .buttons {
           display: flex;
           flex-direction: column;
@@ -81,67 +95,63 @@
           gap: 10px;
 
           button {
-            border: 0;
-            border-radius: 20px;
-            padding: 12px 30px;
-            margin-top: 5px;
-            color: #000000;
-            text-transform: uppercase;
-            font-weight: 550;
-            background-color: #ff3c5f;
-            background-image: linear-gradient(90deg, #ff3c5f 0%, #e49622 100%);
-            white-space: nowrap; /* Prevents text from wrapping onto a new line */
+            border-radius: 20px; 
+            padding: 12px 30px; 
+            margin-top: 5px; 
+            color:#000000; 
+            text-transform : uppercase; 
+            font-weight :550; 
+            background-color :#ff3c5f; 
+            background-image : linear-gradient(90deg, #ff3c5f, #e49622); 
+            white-space : nowrap; 
 
-            /* Adjust button size for smaller screens */
-            @media (max-width: 350px) {
-              padding: 6px 15px; /* smaller padding */
-              font-size: 0.8em; /* smaller font size */
+            /* Adattamento per schermi più piccoli */
+            @media (max-width :350px) { 
+              padding :6px 15px; 
+              font-size :0.8em; 
             }
 
-            /* Make button take full width on screens smaller than 768px */
-            @media (max-width: 766px) {
-              width: 100%;
+            /* Adattamento per schermi più piccoli */
+            @media (max-width :766px) { 
+              width :100%; 
             }
           }
         }
       }
 
+      /* Stile dell'immagine */
       .image {
-        position: relative;
-        
-        &::before {
-          content: "";
-          position: absolute;
-          top: 50%; // Center the shadow vertically
-          left: 50%; // Center the shadow horizontally
-          transform: translate(-50%, -50%); // This ensures the center of the shadow aligns with the center of the image
-          width: calc(100% + 60px); // Adjust this to change the shadow size
-          height: calc(100% + 60px); // Adjust this to change the shadow size
-          background-image: linear-gradient(90deg, #ff3c5f 0%, #e49622 100%);
-          filter: blur(30px); // Adjust this to change the shadow size
-          opacity: .8;
-          z-index: -1;
-          border-radius: 50%; // This makes the shadow round
-        }
-      
-        img {
-          display: block;
-          width: 700px; // Adjust this to change the size of the image
-          height: 400px; // Adjust this to change the size of the image
-          width: 600px; // Adjust this to change the size of the image
-          height: 400px; // Adjust this to change the size of the image
-          object-fit: cover; // This will crop the image to fit the square
-         border-radius: 15px;
-         
-          /* Adjust button size for smaller screens */
-          @media (max-width: 766px) {
-           width: 300px; // Adjust this to change the size of the image
-                   height: 300px; // Adjust this to change the size of the image
-          }
+        position : relative;
 
-        }
-      }
-    }
-  }
+         &::before { 
+           content : ""; 
+           position : absolute; 
+           top :50%;  
+           left :50%;  
+           transform : translate(-50%, -50%);  
+           width : calc(100% +60px);  
+           height : calc(100% +60px);  
+           background-image : linear-gradient(90deg, #ff3c5f, #e49622);  
+           filter : blur(30px);  
+           opacity : .8;  
+           z-index :-1;  
+           border-radius :50%;  
+         } 
+
+         img { 
+           display:block;  
+           width :700px;   
+           height :400px;   
+           object-fit : cover;   
+           border-radius :15px;
+
+           /* Adattamento per schermi più piccoli */
+           @media (max-width :766px) { 
+             width :300px;   
+             height :300px;   
+           } 
+         } 
+       } 
+     } 
+   } 
 }
-/* End Landing Page */
